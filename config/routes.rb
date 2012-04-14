@@ -25,9 +25,6 @@ HelseBackEnd::Application.routes.draw do
   #     end
   #   end
   
-  
-  resources :patient, :employee, :workplace
-  
 
   # Sample resource route with sub-resources:
   #   resources :products do

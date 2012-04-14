@@ -2,7 +2,6 @@ class EmployeeController < ApplicationController
   
   def list 
     @employees = Employee.all
-    
   end 
   
   def show
@@ -32,13 +31,14 @@ class EmployeeController < ApplicationController
   end 
   
   def update
+    @employee = Employee.find(params[:id])
     
   end
   
   def delete
-    
+    @employee = Employee.find(params[:id])
+    @employee.destroy
   end
-
 
   def index
     redirect_to :action => "list"
