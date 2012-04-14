@@ -6,8 +6,8 @@ class EmployeeController < ApplicationController
   end 
   
   def show
-    
-  end 
+      @employee = Employee.find(params[:id])  
+  end
   
   def new 
     @employee = Employee.new
@@ -42,7 +42,6 @@ class EmployeeController < ApplicationController
 
   def index
     redirect_to :action => "list"
-    
   end
   
 end
