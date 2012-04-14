@@ -24,6 +24,7 @@ HelseBackEnd::Application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+  
 
   # Sample resource route with sub-resources:
   #   resources :products do
@@ -54,5 +55,11 @@ HelseBackEnd::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+  
+  #POST REQUST ROUTES
+  match "employee/create" => "employee#create"
+  
+  
+  
+  match ':controller(/:action(/:id))(.:format)'
 end
