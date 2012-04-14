@@ -1,5 +1,6 @@
 class WorkplaceController < ApplicationController
   def list
+    @workplaces = Workplace.all
     
   end
   
@@ -15,5 +16,9 @@ class WorkplaceController < ApplicationController
     
   end
   
+  
+  def index 
+    redirect_to :action => 'list'
+  end
   
 end
