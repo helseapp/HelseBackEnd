@@ -10,7 +10,7 @@
 
 <% @employees.each do |e| %>
 <tr>
-  <td><%= link_to e.id, :action => "list", : %></td>
+  <td><%= link_to e.id, :action => "list", :id => e.id %></td>
   <td><%= e.firstname %></td>
   <td><%= e.lastname %></td>
   <td><%= e.mobilephone %></td>
