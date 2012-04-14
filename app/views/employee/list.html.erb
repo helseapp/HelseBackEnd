@@ -1,5 +1,6 @@
 <table>
   <tr>
+    <th>Bruker ID</th>
     <th>Fornavn</th>
     <th>Etternavn</th>
     <th>Telefonnummer</th>
@@ -9,6 +10,7 @@
 
 <% @employees.each do |e| %>
 <tr>
+  <td><%= link_to e.id, :action => "show", :id => e.id %></td>
   <td><%= e.firstname %></td>
   <td><%= e.lastname %></td>
   <td><%= e.mobilephone %></td>
