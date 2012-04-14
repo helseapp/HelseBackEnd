@@ -10,7 +10,7 @@ class WorkplaceController < ApplicationController
   end
   
   def new
-    @workplace.new
+    @workplace = Workplace.new
     
   end 
   

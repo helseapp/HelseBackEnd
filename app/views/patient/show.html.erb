@@ -1,0 +1,32 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Fornavn</th>
+    <th>Etternavn</th>
+    <th>Adresse</th>
+    <th>Postnummer</th>
+    <th>Poststed</th>
+    <th>E-post</th>
+    <th>Fasttelefon</th>
+    <th>Mobiltelefon</th>
+  </tr>
+
+
+
+
+<tr>
+  <td> @patient.id %></td>
+  <td><%= @patient.firstname %></td>
+  <td><%= @patient.lastname %></td>
+  <td><%= @patient.address %></td>
+  <td><%= @patient.postnumber %></td>
+  <td><%= @patient.postplace %></td>
+  <td><%= @patient.email %></td>
+  <td><%= @patient.telephone %></td>
+  <td><%= @patient.mobilephone %></td>
+</tr>
+
+
+	<p><img src="http://maps.googleapis.com/maps/api/staticmap?center=<%="#{@patient.latitude},#{@patient.longitude}"%>&zoom=15&size=350x350&maptype=roadmap&markers=color:blue%7Clabel:U%7C<%="#{@patient.latitude},#{@patient.longitude}"%>&sensor=false" alt="Your estimated location"/>
+
+</table>

@@ -14,18 +14,20 @@ ActiveRecord::Schema.define(:version => 20120414141544) do
 
   create_table "employees", :force => true do |t|
     t.integer  "workplace_id"
-    t.string   "firstname",    :null => false
-    t.string   "lastname",     :null => false
-    t.date     "birthdate",    :null => false
-    t.string   "address",      :null => false
-    t.string   "postnumber",   :null => false
+    t.string   "firstname",       :null => false
+    t.string   "lastname",        :null => false
+    t.date     "birthdate",       :null => false
+    t.string   "address",         :null => false
+    t.string   "postnumber",      :null => false
     t.string   "postplace"
-    t.string   "email",        :null => false
-    t.string   "mobilephone",  :null => false
+    t.string   "email",           :null => false
+    t.string   "mobilephone",     :null => false
     t.string   "telephone"
-    t.boolean  "woman",        :null => false
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.boolean  "woman",           :null => false
+    t.string   "hashed_password"
+    t.string   "salt"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "messages", :force => true do |t|
@@ -46,8 +48,8 @@ ActiveRecord::Schema.define(:version => 20120414141544) do
     t.string   "address",            :null => false
     t.string   "postnumber",         :null => false
     t.string   "postplace"
-    t.string   "lat"
-    t.string   "lng"
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "marital_status"
     t.string   "email"
     t.string   "telephone"
@@ -73,8 +75,8 @@ ActiveRecord::Schema.define(:version => 20120414141544) do
     t.string   "postnumber"
     t.string   "postplace"
     t.string   "telephone"
-    t.string   "lat"
-    t.string   "lng"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
