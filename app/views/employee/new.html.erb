@@ -1,0 +1,39 @@
+<%= form_for @employee, :url => "/employee/create" do |f| %>
+
+
+  <%= f.label :firstname %>:
+  <%= f.text_field :firstname %><br />
+
+  <%= f.label :lastname %>:
+  <%= f.text_field :lastname %><br />
+  
+  <%= f.label :birthdate %>:
+  <%= date_select("employee", "birthdate", :start_year => 65.years.ago.year, :end_year => 10.years.ago.year, :order => [:day, :month, :year]) %> <br />
+  
+  <%= f.label :address %>:
+  <%= f.text_field :address %><br />
+  
+  <%= f.label :postnumber %>:
+  <%= f.text_field :postnumber %><br />
+  
+  <%= f.label :postplace %>:
+  <%= f.text_field :postplace %><br />
+  
+  <%= f.label :email %>:
+  <%= f.text_field :email %><br />
+  
+  <%= f.label :mobilephone %>:
+  <%= f.text_field :mobilephone %><br />
+  
+  <%= f.label :telephone %>:
+  <%= f.text_field :telephone %><br />
+  
+  <%= f.label :gender %>:
+  male:<%= radio_button("employee", "woman", "false") %>
+  female:<%= radio_button("employee", "woman", "true")%> 
+  
+  <br />
+
+  <%= f.submit %>
+<% end %>
+

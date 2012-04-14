@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Fornavn</th>
+    <th>Etternavn</th>
+    <th>Telefonnummer</th>
+  </tr>
+
+
+
+<% @employees.each do |e| %>
+<tr>
+  <td><%= e.firstname %></td>
+  <td><%= e.lastname %></td>
+  <td><%= e.mobilephone %></td>
+</tr>
+<% end %>
