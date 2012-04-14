@@ -2,7 +2,6 @@ class CreateEmployees < ActiveRecord::Migration
   def change
     create_table :employees do |t|
       t.references :workplace
-      
       t.string :firstname, :null => false
       t.string :lastname, :null => false
       t.date :birthdate, :null => false
@@ -13,6 +12,9 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :mobilephone, :null => false
       t.string :telephone
       t.boolean :woman, :null => false
+      
+      t.string :hashed_password
+      t.string :salt
       
       
       
