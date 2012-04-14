@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <th>Fornavn</th>
+    <th>Etternavn</th>
+    <th>Adresse</th>
+    <th>Postnummer</th>
+    <th>Poststed</th>
+    <th>E-post</th>
+    <th>Fasttelefon</th>
+    <th>Mobiltelefon</th>
+  </tr>
+
+
+
+<% @patients.each do |p| %>
+<tr>
+  <td><%= p.firstname %></td>
+  <td><%= p.lastname %></td>
+  <td><%= p.address %></td>
+  <td><%= p.postnumber %></td>
+  <td><%= p.postplace %></td>
+  <td><%= p.email %></td>
+  <td><%= p.telephone %></td>
+  <td><%= p.mobilephone %></td>
+</tr>
+<% end %>
