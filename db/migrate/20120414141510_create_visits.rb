@@ -3,6 +3,7 @@ class CreateVisits < ActiveRecord::Migration
     create_table :visits do |t|
       t.references :patient
       t.references :employee
+      t.date :day
       t.datetime :start
       t.datetime :end
 

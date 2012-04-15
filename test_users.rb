@@ -45,3 +45,43 @@ pat3 = Patient.new(:workplace => wor2, :firstname => "Sofie", :lastname => "Elle
 pat1.save
 pat2.save
 pat3.save
+
+
+
+
+tt1 = TaskTemplate.new(:name => "Støvsuge", 
+                  :description => "Støvsug alle flater i leiligheten, og sørg for at støvsugerposen ikke er full")
+                  
+tt2 = TaskTemplate.new(:name => "Rydde", 
+                      :description => "Fjern ting fra overflater. Plasser gjenstander slik at leiligheten framstår organisert")
+
+tt3 = TaskTemplate.new(:name => "Dusje", 
+                      :description => "Dusj og kle pasienten i rene klær")
+                      
+tt1.save
+tt2.save
+tt3.save
+
+
+# Visit
+
+vi1 = Visit.new(:patient => pat1, :employee =>emp1, :day=> 2.days.from_now, :start=> nil, :end=> nil)
+vi2 = Visit.new(:patient => pat2, :employee =>emp1, :day=> 5.days.from_now, :start=> nil, :end=> nil)
+vi3 = Visit.new(:patient => pat2, :employee =>emp2, :day=> 5.days.from_now, :start=> nil, :end=> nil)
+
+vi1.save
+vi2.save
+vi3.save
+
+
+
+
+
+
+
+
+
+
+
+
+

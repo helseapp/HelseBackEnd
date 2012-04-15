@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Oppgavemal ID</th>
+    <th>Navn</th>
+    <th>Beskrivelse</th>
+  </tr>
+
+<% @task_templates.each do |t| %>
+<tr>
+
+  <td><%= link_to t.id, :action => "show", :id => t.id %></td>
+  <td><%= t.name %></td>
+  <td><%= t.description %></td>
+</tr>
+<% end %>
