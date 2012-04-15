@@ -16,9 +16,6 @@ emp1 = Employee.new(:workplace => wor1, :firstname => "Marthe", :lastname => "Lo
 emp2 = Employee.new(:workplace => wor1, :firstname => "Josef", :lastname => "Nyhus",
                     :birthdate => "1958-02-11", :address => "Vogts Gate 4", :postnumber => "0420",
                     :postplace => "Oslo", :email => "josef@gmail.com", :mobilephone => "44556677",
-                    :woman => false)
-
-emp3 = Employee.new(:workplace => wor2, :firstname => "Linn", :lastname => "Feld",
                     :birthdate => "1974-07-12", :address => "Kirkeveien 40", :postnumber => "0255",
                     :postplace => "Oslo", :email => "linn@feld.com", :mobilephone => "33445566",
                     :woman => true)
