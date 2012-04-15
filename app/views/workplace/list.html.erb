@@ -12,7 +12,7 @@
 
 <% @workplaces.each do |w| %>
 <tr>
-  <td><%= link_to w.id, workplace_path %></td>
+  <td><%= link_to w.id, :action => 'show', :id => w.id %></td>
   <td><%= w.name %></td>
   <td><%= w.address %></td>
   <td><%= w.postnumber %></td>

@@ -10,8 +10,8 @@ class CreatePatients < ActiveRecord::Migration
       t.string :address, :null => false
       t.string :postnumber, :null => false
       t.string :postplace
-      t.string :lat
-      t.string :lng
+      t.float :latitude
+      t.float :longitude
       t.string :marital_status 
       t.string :email
       t.string :telephone

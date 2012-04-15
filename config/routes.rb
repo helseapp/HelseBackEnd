@@ -57,9 +57,5 @@ HelseBackEnd::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   
   #POST REQUST ROUTES
-  match "employee/create" => "employee#create"
-  
-  
-  
   match ':controller(/:action(/:id))(.:format)'
 end

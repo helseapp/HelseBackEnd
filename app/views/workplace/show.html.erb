@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Navn</th>
+    <th>Adresse</th>
+    <th>Postnummer</th>
+    <th>Poststed</th>
+    <th>Telefon</th>
+  </tr>
+<tr>
+  <td><%= @workplace.id%></td>
+  <td><%= @workplace.name %></td>
+  <td><%= @workplace.address %></td>
+  <td><%= @workplace.postnumber %></td>
+  <td><%= @workplace.postplace %></td>
+  <td><%= @workplace.telephone %></td>
+</tr>
+
+
+	<p><img src="http://maps.googleapis.com/maps/api/staticmap?center=<%="#{@workplace.latitude},#{@workplace.longitude}"%>&zoom=15&size=350x350&maptype=roadmap&markers=color:blue%7Clabel:U%7C<%="#{@workplace.latitude},#{@workplace.longitude}"%>&sensor=false" alt="Your estimated location"/>
+</table>

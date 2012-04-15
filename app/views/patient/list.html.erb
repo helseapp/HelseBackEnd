@@ -15,7 +15,7 @@
 
 <% @patients.each do |p| %>
 <tr>
-  <td><%= link_to p.id, patient_path %></td>
+  <td><%= link_to p.id, :action => "show", :id => p.id %></td>
   <td><%= p.firstname %></td>
   <td><%= p.lastname %></td>
   <td><%= p.address %></td>

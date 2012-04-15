@@ -6,8 +6,8 @@ class CreateWorkplaces < ActiveRecord::Migration
       t.string :postnumber
       t.string :postplace
       t.string :telephone
-      t.string :lat
-      t.string :lng
+      t.float :latitude
+      t.float :longitude
 
       t.timestamps
     end
