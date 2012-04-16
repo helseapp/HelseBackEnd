@@ -24,4 +24,20 @@
 
 </table>
 
+<h3>Besoek</h3>
+<table>
+  <tr>
+    <th>Dato</th>
+    <th>Pasient</th>
+  </tr>
+  <% @employee.visits.each do |v| %>
+  <tr>
+  <td><%= v.day %></td>
+  <td><%= link_to "#{v.patient.firstname} #{v.patient.lastname}", :controller => "patient", :action=> "show", :id => v.patient.id %></td>
+  </tr>
+  <% end %>
+  
+  
+  
+
 <p><%= link_to "Alle ansatte", :action => 'list' %></p>
