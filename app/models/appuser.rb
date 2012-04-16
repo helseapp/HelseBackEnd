@@ -1,9 +1,7 @@
 class Appuser < ActiveRecord::Base
-  attr_accessible :mobilephone, :hashed_password
-  validates_presence_of :mobilephone, :hashed_password
-  validates_uniqueness_of :mobilephone
+  attr_accessible :employee_id, :hashed_password
+  validates_presence_of :employee_id, :hashed_password
+  validates_uniqueness_of :employee_id
   belongs_to :employee
-  has_one :mobilephone, :through => :employee
-  
 
 end

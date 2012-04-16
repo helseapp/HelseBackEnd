@@ -1,7 +1,11 @@
 <div class="login">
-  <% form_tag :controller => 'appuser', :action => 'login'  %>
-    <%= text_field "appuser", "number" %>
-    <%= password_field "hashed_password", "password" %><br/>
-    <%= submit_tag "Logg inn" %>
+  <%= form_tag 'mobile/dagens', :method => :post, :controller => 'mobile' %>
+    <p>Mobilnr</p>
+    <%= text_field_tag 'appuser_number'%>
+    <p>Passord</p>
+    <%= password_field_tag 'appuser_hashed_password' %>
+    <br/><br/><br/> 
+    <%= submit_tag 'Logg inn', :id => "log_in" %>
+  </form>
 
  </div>
