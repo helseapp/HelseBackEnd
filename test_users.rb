@@ -69,9 +69,9 @@ tt3.save
 
 # Visit
 
-vi1 = Visit.new(:patient => pat1, :employee =>emp1, :day=> 2.days.from_now, :start=> nil, :end=> nil)
-vi2 = Visit.new(:patient => pat2, :employee =>emp1, :day=> 5.days.from_now, :start=> nil, :end=> nil)
-vi3 = Visit.new(:patient => pat2, :employee =>emp2, :day=> 5.days.from_now, :start=> nil, :end=> nil)
+vi1 = Visit.new(:patient => pat1, :employee => emp1, :day=> 2.days.from_now, :start=> nil, :end=> nil)
+vi2 = Visit.new(:patient => pat2, :employee => emp1, :day=> 5.days.from_now, :start=> nil, :end=> nil)
+vi3 = Visit.new(:patient => pat2, :employee => emp2, :day=> 5.days.from_now, :start=> nil, :end=> nil)
 
 vi1.save
 vi2.save
