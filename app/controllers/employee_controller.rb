@@ -1,6 +1,8 @@
 class EmployeeController < ApplicationController
+  #layout "mobile"
   
   def list 
+    
     @employees = Employee.all
   end 
   
