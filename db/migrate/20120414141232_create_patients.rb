@@ -3,7 +3,6 @@ class CreatePatients < ActiveRecord::Migration
     create_table :patients do |t|
       t.references :workplace
       
-      
       t.string :firstname, :null => false
       t.string :lastname, :null => false
       t.date :birthdate, :null => false

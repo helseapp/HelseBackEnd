@@ -2,6 +2,7 @@ class CreateEmployees < ActiveRecord::Migration
   def change
     create_table :employees do |t|
       t.references :workplace
+      
       t.string :firstname, :null => false
       t.string :lastname, :null => false
       t.date :birthdate, :null => false
