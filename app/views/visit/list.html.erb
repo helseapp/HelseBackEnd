@@ -1,0 +1,20 @@
+<h2>Visits</h2>
+
+<table>
+  <tr>
+    <th>Dato</th>
+    <th>Pasient</th>
+    <th>Arbeider</th>
+    <th>Påbegynt</th>
+    <th>Avsluttet</th>
+  </tr>
+  <%= @visits.each do |v|%>
+    <tr>
+      <td><%= v.day %></td>
+      <td><%= "#{v.patient.firstname} #{v.patient.lastname}" %></td>
+      <td><%= "#{v.employee.firstname} #{v.employee.lastname}" %></td>
+      <td><%= v.start %></td>
+      <td><%= v.end %></td>
+    </tr>
+  <% end %>
+</table>
