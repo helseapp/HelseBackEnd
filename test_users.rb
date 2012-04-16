@@ -45,9 +45,14 @@ pat3 = Patient.new(:workplace => wor2, :firstname => "Sofie", :lastname => "Elle
                    :birthdate => "1941-06-13", :address => "Holbergs Plass 13", :postnumber => "0355",
                    :postplace => "Oslo", :woman => true)
 
+pat4 = Patient.new(:workplace => wor2, :firstname => "Fritjof", :lastname => "Olsen",
+                   :birthdate => "1932-05-13", :address => "Bergensgata 22", :postnumber => "0468",
+                   :postplace => "Oslo", :woman => false)
+
 pat1.save
 pat2.save
 pat3.save
+pat4.save
 
 
 

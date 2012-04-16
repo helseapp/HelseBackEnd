@@ -23,7 +23,7 @@ class TaskTemplateController < ApplicationController
        flash[:success] = "Oppgavemalen #{@task_template.name} ble opprettet"
        redirect_to :action => 'list'
      else 
-       flash[:error] = "Oppgavemalen kunne ikke bli opprettet. Forsøk igjen"
+       flash[:error] = "Oppgavemalen kunne ikke bli opprettet. Forsoek igjen"
        render :action => 'new'
     end
     

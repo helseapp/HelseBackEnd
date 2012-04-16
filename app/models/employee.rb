@@ -4,6 +4,6 @@ class Employee < ActiveRecord::Base
   belongs_to :workplace
   has_and_belongs_to_many :visits
   
-  validates_uniqueness_of :mobilephone, :email, :on => :save, :message => "Må være unike"
-  validates_presence_of :firstname, :lastname, :telephone, :postnumber, :woman, :on => :save, :message => "Må fylles ut"
+  validates_uniqueness_of :mobilephone, :email, :on => :save, :message => "Maa vaere unike"
+  validates_presence_of :firstname, :lastname, :telephone, :postnumber, :woman, :on => :save, :message => "Maa fylles ut"
 end

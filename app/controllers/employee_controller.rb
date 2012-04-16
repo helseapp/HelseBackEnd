@@ -26,7 +26,7 @@ class EmployeeController < ApplicationController
        flash[:success] = "Brukeren #{@employee.firstname} ble opprettet"
        redirect_to :action => 'list'
      else 
-       flash[:error] = "Brukeren kunne ikke bli opprettet. Forsøk igjen"
+       flash[:error] = "Brukeren kunne ikke bli opprettet. Forsoek igjen"
        render :action => 'new'
     end
     
