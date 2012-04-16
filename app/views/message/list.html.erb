@@ -1,0 +1,21 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th>DATO</th>
+    <th>MOTTAKER</th>
+    <th>MELDING</th>
+    <th>PRIORITET</th>
+    <th>STATUS</th>
+  </tr>
+  
+  <% @messages.each do |m| %>
+  <tr>
+    <td><%= m.id %></td>
+    <td><%= m.date_sent %></td>
+    <td><%= m.employee %></td>
+    <td><%= link_to m.text, :action => "show", :id => m.id %></td>
+    <td><%= m.high_priority ? "Hoyt" : "Lavt" %></td>
+    <td><%= m.read ? "Lest" : "Ikke lest" %></td>
+  </tr>
+<% end %>
+</table>

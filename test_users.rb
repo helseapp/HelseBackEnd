@@ -23,7 +23,7 @@ emp2 = Employee.new(:workplace => wor1, :firstname => "Josef", :lastname => "Nyh
                     :woman => true)
 emp1.save
 emp2.save
-
+emp3.save
 
 #Patients
 
@@ -69,17 +69,6 @@ vi3 = Visit.new(:patient => pat2, :employee =>emp2, :day=> 5.days.from_now, :sta
 vi1.save
 vi2.save
 vi3.save
-
-# Messages
-      
-
-mes1 = Message.new(:date_sent => Time.now - 2.days, :employee => emp1, :text => "Trenger ikke besoke Gunnar i dag", :read => true,
-      :high_priority => false)
-
-mes2 = Message.new(:date_sent => Time.now - 4.days.ago, :employee => emp2, :text => "KJAPP DEG TIL GUNNAR!", :read => true, :high_priority => false)
-
-mes1.save
-mes2.save
 
 
 
