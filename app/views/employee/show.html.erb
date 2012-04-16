@@ -1,6 +1,27 @@
-<h1> Personalprofil: <%= @employee.firstname + " " + @employee.lastname%></h1>
+<h1> Personalprofil: <%= "#{@employee.firstname} #{@employee.lastname}"%></h1>
 
 
+<h3>Meldinger</h3><br/>
+<table>
+  <tr>
+    <th>Dato</th>
+    <th>Melding</th>
+  </tr>
 
+<% messages = Message.all %>
+<% messages.each do |m| %>
+<tr>
+  <% if m.employee.id == @employee.id %>
+    <% if !m.read %>
+      <td><em><%= m.date_sent %></em></td>
+      <td><em><%= m.text %></em></td>
+    <% else %>
+      <td><%= m.date_sent %></td>
+      <td><%= m.text %></td>
+    <% end %>
+  <% end %>
+<% end %>
 
-<p><%= link_to "Alle ansatte", :action => "list" %></p>
+</table>
+
+<p><%= link_to "Alle ansatte", :action => 'list' %></p>

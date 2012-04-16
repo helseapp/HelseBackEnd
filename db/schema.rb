@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120415193511) do
+ActiveRecord::Schema.define(:version => 20120415233736) do
 
   create_table "employees", :force => true do |t|
     t.integer  "workplace_id"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(:version => 20120415193511) do
     t.boolean  "woman",        :null => false
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "messages", :force => true do |t|
+    t.integer  "employee_id"
+    t.time     "date_sent"
+    t.string   "text"
+    t.boolean  "high_priority"
+    t.boolean  "read"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "patient_notes", :force => true do |t|

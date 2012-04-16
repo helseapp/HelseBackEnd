@@ -1,3 +1,8 @@
+<style>
+  td {
+    padding-right: 15px;
+  }
+</style>
 <table>
   <tr>
     <th>ID</th>
@@ -12,7 +17,7 @@
   <tr>
     <td><%= m.id %></td>
     <td><%= m.date_sent %></td>
-    <td><%= m.employee %></td>
+    <td><%= m.employee.firstname + " " + m.employee.lastname %></td>
     <td><%= link_to m.text, :action => "show", :id => m.id %></td>
     <td><%= m.high_priority ? "Hoyt" : "Lavt" %></td>
     <td><%= m.read ? "Lest" : "Ikke lest" %></td>

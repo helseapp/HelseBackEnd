@@ -21,6 +21,12 @@ emp2 = Employee.new(:workplace => wor1, :firstname => "Josef", :lastname => "Nyh
                     :birthdate => "1974-07-12", :address => "Kirkeveien 40", :postnumber => "0255",
                     :postplace => "Oslo", :email => "linn@feld.com", :mobilephone => "33445566",
                     :woman => true)
+
+emp3 = Employee.new(:workplace => wor2, :firstname => "Ingunn", :lastname => "Aker",
+                    :birthdate => "1970-05-22", :address => "Platous Gate 30", :postnumber => "0192",
+                    :postplace => "Oslo", :email => "ingunn@aker.com", :mobilephone => "42424242",
+                    :woman => true)
+
 emp1.save
 emp2.save
 emp3.save
@@ -45,6 +51,7 @@ pat3.save
 
 
 
+# Tasks
 
 tt1 = TaskTemplate.new(:name => "Støvsuge", 
                   :description => "Støvsug alle flater i leiligheten, og sørg for at støvsugerposen ikke er full")
@@ -69,6 +76,19 @@ vi3 = Visit.new(:patient => pat2, :employee =>emp2, :day=> 5.days.from_now, :sta
 vi1.save
 vi2.save
 vi3.save
+
+# Messages
+
+mes1 = Message.new(:date_sent => Time.now - 3.days, :employee => emp1, :text => "Du er flink!",
+                   :read => true, :high_priority => false)
+
+mes2 = Message.new(:date_sent => Time.now + 1.days, :employee => emp2, :text => "You're fired!",
+                   :read => false, :high_priority => true)
+
+
+
+mes1.save
+mes2.save
 
 
 
