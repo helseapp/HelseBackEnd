@@ -2,7 +2,7 @@ class MobileController < ApplicationController
   layout 'mobile'
   
   def index
-    @appuser = Appuser.new
+    @appusers = Appuser.all
   end
   
 end

@@ -84,13 +84,11 @@ vi3.save
 
 # Messages
 
-mes1 = Message.new(:date_sent => Time.now - 3.days, :employee => emp1, :text => "Du er flink!",
+mes1 = Message.new(:date_sent => (Time.now - 3.days), :employee => emp1, :text => "Du er flink!",
                    :read => true, :high_priority => false)
 
-mes2 = Message.new(:date_sent => Time.now + 1.days, :employee => emp2, :text => "You're fired!",
+mes2 = Message.new(:date_sent => (Time.now + 1.days), :employee => emp2, :text => "You're fired!",
                    :read => false, :high_priority => true)
-
-
 
 mes1.save
 mes2.save

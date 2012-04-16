@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20120416153935) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
-  
+
   create_table "employees", :force => true do |t|
     t.integer  "workplace_id"
     t.string   "firstname",       :null => false

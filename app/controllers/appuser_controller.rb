@@ -1,5 +1,6 @@
 class AppuserController < ApplicationController
-
+  layout 'mobile'
+  
   def new
     @appuser = Appuser.new
   end
@@ -14,6 +15,11 @@ class AppuserController < ApplicationController
       flash[:success] = "Du er logget inn"
     
     end
+    
+  end
+  
+  def index
+     @appusers = Appuser.all
     
   end
 end

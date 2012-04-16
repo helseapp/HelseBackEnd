@@ -1,16 +1,7 @@
 <div class="login">
-  <%= form_for @appuser do |a| %>
-
-
-  <%= a.label :employee %>
-  <%= a.telephone_field :mobilephone %><br />
-
-  <%= a.label :hashed_password %>:
-  <%= a.password_field_tag :hashed_password %><br />
-  
-  <br />
-
-  <%= a.submit %>
-<% end %>
+  <% form_tag :controller => 'appuser', :action => 'login'  %>
+    <%= text_field "appuser", "number" %>
+    <%= password_field "hashed_password", "password" %><br/>
+    <%= submit_tag "Logg inn" %>
 
  </div>
