@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120415233736) do
+ActiveRecord::Schema.define(:version => 20120416153935) do
+
+  create_table "appusers", :force => true do |t|
+    t.integer  "employee_id"
+    t.string   "hashed_password"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "employees", :force => true do |t|
     t.integer  "workplace_id"
