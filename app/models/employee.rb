@@ -7,5 +7,6 @@ class Employee < ActiveRecord::Base
   validates_presence_of :firstname, :lastname, :telephone, :postnumber, :woman, :on => :save, :message => "Maa fylles ut"
 
   has_many :visits
+  has_one :appuser
 
 end
