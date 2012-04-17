@@ -1,4 +1,6 @@
 class WorkplaceController < ApplicationController
+  layout "backend"
+  
   def list
     @workplaces = Workplace.all
     

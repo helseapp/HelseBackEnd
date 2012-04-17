@@ -8,7 +8,7 @@
     <th>Påbegynt</th>
     <th>Avsluttet</th>
   </tr>
-  <%= @visits.each do |v|%>
+  <% @visits.each do |v|%>
     <tr>
       <td><%= v.day %></td>
       <td><%= "#{v.patient.firstname} #{v.patient.lastname}" %></td>
@@ -18,3 +18,5 @@
     </tr>
   <% end %>
 </table>
+
+<%= link_to "Legg til nytt besok", :action => "new" %>

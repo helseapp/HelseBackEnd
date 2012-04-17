@@ -1,4 +1,6 @@
 class VisitController < ApplicationController
+  layout "backend"
+  
   
   def list
     @visits = Visit.all
@@ -16,6 +18,7 @@ class VisitController < ApplicationController
   end
   
   def index
+    redirect_to :action => "list"
     
   end
   

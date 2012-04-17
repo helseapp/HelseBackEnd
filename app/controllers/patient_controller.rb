@@ -1,4 +1,6 @@
 class PatientController < ApplicationController
+  layout "backend"
+  
   def list
     @patients = Patient.all
   end

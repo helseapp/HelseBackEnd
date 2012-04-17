@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HelseBackEnd</title>
+  <%= stylesheet_link_tag    "backend", :media => "all" %>
+  <%= javascript_include_tag "backend" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="wrapper">
+  <header id="main_header">
+    <div id="main_nav">
+      <h1>HelseApp</h1>
+      <ul>
+        <li><%= link_to "Ansatte", :controller => "employee" %></li>
+        <li><%= link_to "Pasienter", :controller => "patient" %></li>
+        <li><%= link_to "Besok", :controller => "visit" %></li>
+        <li><%= link_to "Oppgavemaler", :controller => "task_template" %></li>
+      </ul>
+    </div>
+  </header>
+
+  <%= yield %>
+  </div>
+</body>
+</html>

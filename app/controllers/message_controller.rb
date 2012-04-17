@@ -1,4 +1,6 @@
 class MessageController < ApplicationController
+  layout "backend"
+  
   def list
     @messages = Message.all
   end

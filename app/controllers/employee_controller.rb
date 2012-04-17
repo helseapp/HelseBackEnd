@@ -1,5 +1,5 @@
 class EmployeeController < ApplicationController
-  #layout "mobile"
+  layout "backend"
   
   def list 
     @employees = Employee.all

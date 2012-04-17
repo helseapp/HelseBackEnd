@@ -1,4 +1,6 @@
 class TaskTemplateController < ApplicationController
+  layout "backend"
+  
   def list 
     @task_templates = TaskTemplate.all
   end 
