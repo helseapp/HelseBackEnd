@@ -17,18 +17,22 @@
         <li><%= link_to "Besok", :controller => "visit" %></li>
         <li><%= link_to "Oppgavemaler", :controller => "task_template" %></li>
       </ul>
-    </div>
+    </div><!-- end main_nav -->
   </header>
   <div id="context_menu">
-    <%= link_to "Legg til ny", :action => "new" %>
-    <%= link_to "Vis", :action => "list" %>
-    <%= link_to "Beskrivelse", :action => "about" %>
-  </div>
+    &nbsp;
+    <ul>
+      <li><%= link_to "Legg til ny", :action => "new" %></li>
+      <li><%= link_to "Vis", :action => "list" %></li>
+      <li><%= link_to "Beskrivelse", :action => "about" %></li>
+    </ul>
+  </div><!-- end context_menu -->
   <div id="main_content">
 
   <%= yield %>
-  </div>
+  
+  </div> <!-- end main_content -->
   <p id="clear"></p>
-  </div>
+  </div><!-- end wrapper -->
 </body>
 </html>

@@ -15,9 +15,5 @@ class PatientController < ApplicationController
     redirect_to :action => 'list'
   end
   
-  def showall 
-    @patients = Patient.all
-  
-  end
   
 end
