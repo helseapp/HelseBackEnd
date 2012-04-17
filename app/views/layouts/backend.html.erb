@@ -14,19 +14,14 @@
       <ul>
         <li><%= link_to "Ansatte", :controller => "employee" %></li>
         <li><%= link_to "Pasienter", :controller => "patient" %></li>
+        <li><%= link_to "Senter", :controller => "workplace" %></li>
         <li><%= link_to "Besok", :controller => "visit" %></li>
         <li><%= link_to "Oppgavemaler", :controller => "task_template" %></li>
       </ul>
     </div><!-- end main_nav -->
   </header>
-  <div id="context_menu">
-    &nbsp;
-    <ul>
-      <li><%= link_to "Legg til ny", :action => "new" %></li>
-      <li><%= link_to "Vis", :action => "list" %></li>
-      <li><%= link_to "Beskrivelse", :action => "about" %></li>
-    </ul>
-  </div><!-- end context_menu -->
+  <%= render :partial => 'context' rescue render "shared/context" %>
+  
   <div id="main_content">
 
   <%= yield %>
