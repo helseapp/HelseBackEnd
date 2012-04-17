@@ -3,6 +3,7 @@
     <th>ID</th>
     <th>Navn</th>
     <th>Beskrivelse</th>
+    <th>Slett</th>
   </tr>
 
 <% @task_templates.each do |t| %>
@@ -11,6 +12,7 @@
   <td><%= link_to t.id, :action => "show", :id => t.id %></td>
   <td><%= t.name %></td>
   <td><%= t.description %></td>
+  <td><%= link_to "slett", :action => "delete", :id => t.id %>
 </tr>
 <% end %>
 </table>

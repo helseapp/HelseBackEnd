@@ -1,0 +1,15 @@
+<h3>Alle dagens besoek</h3>
+<table>
+  <tr>
+    <th>Pasient</th>
+    <th>Ansatt</th>
+    <th>Innsjekk</th>
+    <th>Ferdig</th>
+    
+  </tr>
+<% @visits.each do |v| %>
+  <tr>
+    <td><%= "#{v.patient.firstname} #{v.patient.lastname}"%></td>
+    <td><%= "#{v.employee.firstname} #{v.employee.lastname}"%></td>
+  </tr>
+<% end %>

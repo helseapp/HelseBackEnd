@@ -15,12 +15,7 @@ class TaskTemplateController < ApplicationController
   end 
   
   def create
-     @task_template = TaskTemplate.new(params[:employee])
-     if params[:employee]['woman'] == 'false'
-       @task_template.woman = false
-      else 
-        @task_template.woman = true
-      end
+     @task_template = TaskTemplate.new(params[:task_template])
      if @task_template.save
        flash[:success] = "Oppgavemalen #{@task_template.name} ble opprettet"
        redirect_to :action => 'list'
@@ -39,6 +34,7 @@ class TaskTemplateController < ApplicationController
   def delete
     @task_template = TaskTemplate.find(params[:id])
     @task_template.destroy
+    redirect_to :action => "list"
   end
 
   def index

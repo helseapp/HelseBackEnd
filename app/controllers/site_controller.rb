@@ -6,7 +6,7 @@ class SiteController < ApplicationController
   end
   
   def today
-    @visits = Visit.all
+    @visits = Visit.all_today
   end
   
   def map

@@ -11,6 +11,7 @@ gem 'json'
 gem 'pg'
 gem 'geocoder'
 gem 'bcrypt-ruby'
+gem 'gmaps4rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
