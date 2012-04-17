@@ -1,11 +1,12 @@
 <div class="login">
-  <%= form_tag 'mobile/dagens', :method => :post, :controller => 'mobile' %>
+  <p id="error"><%= @error_message %></p>
+  <%= form_tag '/mobile/dagens', :method => :post, :controller => 'mobile' %>
     <p>Mobilnr</p>
     <%= text_field_tag 'appuser_number'%>
     <p>Passord</p>
     <%= password_field_tag 'appuser_hashed_password' %>
-    <br/><br/><br/> 
+    <br/><br/> 
     <%= submit_tag 'Logg inn', :id => "log_in" %>
-  </form>
+    </form>
 
  </div>

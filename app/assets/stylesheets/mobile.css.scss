@@ -15,8 +15,8 @@ body {
 
 .login {
     text-align: center;
-    margin-top: 150px;
-    line-height: 0.5em;
+    margin-top: 130px;
+    line-height: 2em;
 }
 
 .login p {
@@ -29,6 +29,12 @@ body {
     width: 85px;
     height: 45px;
     font-weight: bold;
+}
+
+#error{
+    color: red;
+    font-size: 0.7em;
+    margin-top: 0px;
 }
 
 .screen {

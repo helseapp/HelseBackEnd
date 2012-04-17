@@ -1,4 +1,6 @@
-<p>Bruker: <%= @name %></p>
-
+<%= @patients.class %><%= @patients.count %>
+<% @patients.each do |p| %>
+<%= p %><br/>
+<% end %> 
 
 
