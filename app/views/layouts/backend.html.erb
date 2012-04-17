@@ -19,8 +19,16 @@
       </ul>
     </div>
   </header>
+  <div id="context_menu">
+    <%= link_to "Legg til ny", :action => "new" %>
+    <%= link_to "Vis", :action => "list" %>
+    <%= link_to "Beskrivelse", :action => "about" %>
+  </div>
+  <div id="main_content">
 
   <%= yield %>
+  </div>
+  <p id="clear"></p>
   </div>
 </body>
 </html>
