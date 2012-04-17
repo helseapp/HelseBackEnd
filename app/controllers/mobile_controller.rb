@@ -19,7 +19,11 @@ class MobileController < ApplicationController
         @error_message = "Ugyldig bruker, prov igjen"
         render :action => 'index'
       else
-        @patients = @employee.visits
+        @visits = @employee.visits
+        @patients = []
+        @visits.each do |v|
+          @patients << v.patient
+        end
       end
     end
   end

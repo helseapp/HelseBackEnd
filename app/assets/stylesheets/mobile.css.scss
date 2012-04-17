@@ -18,7 +18,7 @@ body {
     margin-top: 130px;
     line-height: 2em;
 }
-
+    
 .login p {
     font-family: sans-serif;
     font-size: 1em;
@@ -39,7 +39,48 @@ body {
 
 .screen {
     margin-top: 4em;
-    margin-left: 5.4em;
+    margin-left: 5.5em;
     width: 228px;
     height: 374px;
+   
+}
+
+#page_title{
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 100;
+    color: #909090;
+    padding-bottom: 2px;
+}
+
+#patients_to_visit{
+    border-bottom: 1px gray #777;
+    padding-left: 5px;
+    margin-top: 15px;
+    margin-bottom:  5px;
+    width: 223px;
+    height: 90px;
+    box-shadow: 0px 4px 9px #999;
+}
+
+#patient_img{
+    width: 60px;
+    float: left;
+    padding-right: 13px;
+}
+
+#patients_to_visit ul,li{
+    list-style: none;
+    
+}
+
+#patient_name{
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+#patient_address{
+    font-color: grey;
+    font-size: 0.75em;
+    font-family: sans-serif;
 }
