@@ -6,6 +6,7 @@ class MobileController < ApplicationController
   end
   
   def dagens
+    today = Date.today
     @number = params[:appuser_number]
     @pass = params[:appuser_hashed_password]
     @employee = Employee.first(:conditions =>["mobilephone=?",@number])
@@ -20,9 +21,9 @@ class MobileController < ApplicationController
         render :action => 'index'
       else
         @visits = @employee.visits
-        @patients = []
+        @todays_patients = []
         @visits.each do |v|
-          @patients << v.patient
+          @todays_patients << v.patient if v.day == today
         end
       end
     end
