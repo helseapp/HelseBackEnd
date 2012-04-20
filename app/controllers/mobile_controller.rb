@@ -31,9 +31,7 @@ class MobileController < ApplicationController
   
   def patientprofile
     @patient = Patient.find(params[:id])
+    @todays_tasks = @patient.visits.tasks
   end
   
-  def extended_patientprofile
-    @patient = Patient.find(params[:id])
-  end
 end
