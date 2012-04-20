@@ -1,0 +1,23 @@
+<div id="patients_to_visit" style="cursor: default">
+  <img  id="patient_img" src="<%= image_path('gunnar.png') %>">
+  <ul>
+    <li id="patient_name"><%= "#{@patient.firstname} #{@patient.lastname}" %></li>
+    <li id="patient_address"><%= "#{@patient.address}" %><br/>
+        <%= "#{@patient.postnumber} #{@patient.postplace}" %></li>
+  </ul>
+  <div class="more">
+  </div>
+  <img src="<%= image_path('more.png') %>" id="more_img"  onclick=showMore(<%= @patient.id %>) /></a>
+</div>
+<div id="extended_info">
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+  has been the industry's standard dummy text ever since the 1500s, when an unknown
+  printer took a galley of type and scrambled it to make a type specimen book. It has survived
+  not only five centuries, but also the leap into electronic typesetting, remaining essentially
+  unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+  Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+  PageMaker including versions of Lorem Ipsum.</p>
+</div>
+<div id="To_do">
+  <h2 id="to_do_title">To-Do liste</h2>
+</div>

@@ -3,6 +3,11 @@ body {
     height: 100%;
 }
 
+a, a:visited{
+    text-decoration: none;
+    color: black;
+}
+
 .phone {
     position: fixed;
     margin-left:  25%;
@@ -60,14 +65,19 @@ body {
     margin-bottom:  5px;
     width: 223px;
     height: 90px;
-    box-shadow: 0px 4px 9px #999;
+    box-shadow: 0px 4px 9px #AAAAAA;
     cursor: pointer;
 }
 
 #patient_img{
-    width: 60px;
+    width: 58px;
     float: left;
     padding-right: 13px;
+}
+
+#patients_to_visit {
+      position: relative;
+      padding-top: 5px;
 }
 
 #patients_to_visit ul,li{
@@ -76,12 +86,42 @@ body {
 }
 
 #patient_name{
-    font-weight: bold;
+    padding-top: 9px;
     font-family: sans-serif;
 }
 
 #patient_address{
-    font-color: grey;
+    color: #919191;
     font-size: 0.75em;
     font-family: sans-serif;
+}
+
+.more {
+    background-color: #CCCCCC;
+    position: absolute;
+    width: 100%;
+    height:  18px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+#more_img{
+    position: relative;
+    width: 23px;
+    float: right;
+    margin-right: 5px;
+    margin-top: 13px;
+    z-index: 100;
+}
+
+#to_do_title{
+    padding-top: 5px;
+    padding-left: 5px;
+    color: #606060;
+    font-size: 1em;
+}
+
+#extended_info{
+    visibility: hidden; 
 }

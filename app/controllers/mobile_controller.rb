@@ -5,7 +5,7 @@ class MobileController < ApplicationController
     @appusers = Appuser.all
   end
   
-  def dagens
+  def today
     today = Date.today
     @number = params[:appuser_number]
     @pass = params[:appuser_hashed_password]
@@ -29,4 +29,11 @@ class MobileController < ApplicationController
     end
   end
   
+  def patientprofile
+    @patient = Patient.find(params[:id])
+  end
+  
+  def extended_patientprofile
+    @patient = Patient.find(params[:id])
+  end
 end

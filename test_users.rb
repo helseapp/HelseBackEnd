@@ -77,10 +77,12 @@ tt3.save
 vi1 = Visit.new(:patient => pat1, :employee => emp1, :day=> 2.days.from_now, :start=> nil, :end=> nil)
 vi2 = Visit.new(:patient => pat2, :employee => emp1, :day=> 5.days.from_now, :start=> nil, :end=> nil)
 vi3 = Visit.new(:patient => pat2, :employee => emp2, :day=> 5.days.from_now, :start=> nil, :end=> nil)
+vi4 = Visit.new(:patient => pat1, :employee => emp1, :day=> Date.today, :start=>nil, :end=> nil)
 
 vi1.save
 vi2.save
 vi3.save
+
 
 # Messages
 
