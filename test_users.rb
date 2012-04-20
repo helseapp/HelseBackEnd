@@ -87,8 +87,8 @@ vi4.save
 vi5.save
 
 # Tasks
-task1 = Task.new(:task_template_id => 1, :visit_id => 4, :completed => false)
-task2 = Task.new(:task_template_id => 2, :visit_id => 5, :completed => false)
+task1 = Task.new(:task_template_id => emp1.id, :visit_id => vi4.id, :completed => false)
+task2 = Task.new(:task_template_id => emp1.id, :visit_id => vi5.id, :completed => false)
 
 task1.save
 task2.save

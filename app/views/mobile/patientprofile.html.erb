@@ -17,6 +17,9 @@
 </div>
 <div id="To_do">
   <h2 id="to_do_title">To-Do liste</h2>
-  <% @todays_visits.each do |t| %>
-  <%= t.task[:id] %>
+  <ul>
+  <% @visit[0].tasks.each do |t| %>
+      <li><%= t.task_template.name %></li>
+  <% end %>
+  </ul>
 </div>
