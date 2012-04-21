@@ -14,6 +14,16 @@ $(document).ready(function(){
         }
         
         
-    })
+    });
+    
+    $('.tasks').click(function(){
+        id = $(this).attr('id');
+
+        if($('#task_description' + id).css('display') === "none")
+            $('#task_description' + id).show("slow");
+        else
+            $('#task_description' + id).hide("fast");
+        
+    });
 
 });

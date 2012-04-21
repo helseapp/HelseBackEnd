@@ -19,7 +19,9 @@
   <h2 id="to_do_title">To-Do liste</h2>
   <ul>
   <% @visit[0].tasks.each do |t| %>
-      <li><%= t.task_template.name %></li>
+      <li class="tasks" id="<%= t.id %>"><%= check_box_tag 'task_box', 'false' ; %><%= t.task_template.name %>
+        <li class="task_description" id="task_description<%= t.id %>"></%=><%= t.task_template.description %></li>
+      </li>
   <% end %>
   </ul>
 </div>

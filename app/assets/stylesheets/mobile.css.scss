@@ -118,6 +118,7 @@ a, a:visited{
 
 #to_do_title{
     padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 5px;
     color: #606060;
     font-size: 1em;
@@ -126,4 +127,27 @@ a, a:visited{
 #extended_info{
     display: none;
     color: green;
+}
+
+.tasks {
+    font-family: sans-serif;
+    font-size: 0.8em;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+#task_box{
+    background: url('gunnar.png') no-repeat;
+    margin-right: 20px;
+    margin-bottom: 15px;
+}
+
+.task_description{
+    display: none;
+    font-family: sans-serif;
+    font-size: 0.65em;
+    margin-left: 55px;
+    padding-right: 15px;
+    margin-bottom: 15px;
+    color: #1B91E0;
 }
