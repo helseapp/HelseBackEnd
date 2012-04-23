@@ -12,11 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-<<<<<<< HEAD
 //= require_tree .
 
 mobile.js
 site.js
-=======
-//= require_tree .
->>>>>>> 08d46aeca935b0c18a5949e419426058794217a4
