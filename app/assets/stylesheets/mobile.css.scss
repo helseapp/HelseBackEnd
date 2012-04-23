@@ -31,6 +31,16 @@ a, a:visited{
     color: black;
 }
 
+#buttons {
+    position: fixed;
+    margin-top: 30%;
+    margin-left: 60%;
+}
+
+#buttons img{
+    width: 40px;
+    
+}
 .phone {
     position: fixed;
     margin-left:  25%;
@@ -43,8 +53,8 @@ a, a:visited{
 
 .login {
     text-align: center;
-    margin-top: 130px;
-    line-height: 2em;
+    margin-top: 40px;
+    line-height: 1.5em;
 }
     
 .login p {
@@ -70,6 +80,7 @@ a, a:visited{
     margin-left: 5.5em;
     width: 228px;
     height: 374px;
+    overflow: hidden;
    
 }
 
@@ -78,13 +89,13 @@ a, a:visited{
     font-family: sans-serif;
     font-weight: 100;
     color: #909090;
-    padding-bottom: 2px;
+    border-bottom: 2px solid  #1B91E0;
 }
 
 #patients_to_visit{
     border-bottom: 1px gray #777;
     padding-left: 5px;
-    margin-top: 15px;
+    margin-top: 0px;
     margin-bottom:  5px;
     width: 223px;
     height: 90px;
@@ -127,17 +138,18 @@ a, a:visited{
     width: 23px;
     float: right;
     margin-right: 5px;
-    bottom: 5px;
+    bottom: 25px;
     z-index: 100;
     cursor: pointer;
 }
 
 .title {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     padding-left: 5px;
     color: #606060;
     font-size: 1em;
+    border-bottom: 2px solid  #1B91E0;
 }
 
 #extended_info{
@@ -145,19 +157,19 @@ a, a:visited{
     color: #919191;
     font-family: sans-serif;
     font-size: 0.75em;
-    margin-left: 10px;
-    padding-bottom: 10px;
+    width: inherit;
 }
+
 
 .tasks {
     font-family: sans-serif;
     font-size: 0.8em;
-    margin-left: 15px;
+    margin-left: 10px;
     cursor: pointer;
 }
 
 #task_box{
-    margin-left: 20px;
+    margin-left: 0px;
     margin-right: 5px;
     margin-bottom: 15px;
 }
@@ -172,9 +184,11 @@ a, a:visited{
     color: #1B91E0;
 }
 
+
 #patient_log{
     min-height: 60px;
     height: auto;
+    
 }
 
 #more_log{
@@ -188,7 +202,7 @@ a, a:visited{
 }
 
 #comments{
-    min-heigt: 60px;
+    min-height: 60px;
     height: auto;
 }
 

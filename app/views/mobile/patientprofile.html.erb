@@ -6,15 +6,14 @@
         <%= "#{@patient.postnumber} #{@patient.postplace}" %></li>
   </ul>
   <img src="<%= image_path('more.png') %>" id="more_info" />
-  <br />
   <div id="extended_info">
-  <ul>
-    <li>Mobilnr: <%= @patient.mobilephone %></li>
-    <li>Epost: <%= @patient.email %></li>
-    <li>Sivilstatus: <%= @patient.marital_status %></li>
-    <li>Gjennomsnittlig besøktid: <%= @patient.average_visit_time %> min.</li>
-  </ul>
- </div>
+    <ul>
+      <li>Mobilnr: <%= @patient.mobilephone %></li>
+      <li>Epost: <%= @patient.email %></li>
+      <li>Sivilstatus: <%= @patient.marital_status %></li>
+      <li>Gjennomsnittlig besøktid: <%= @patient.average_visit_time %> min.</li>
+    </ul>
+  </div>
 </div>
 
 
@@ -38,4 +37,6 @@
 
 <div id="comments">
   <h2 class="title">Kommentarer <img src="<%= image_path('more.png') %>" id="more_comments" /></h2>
+  <textarea id="comment_area" rows="4" cols="25" ></textarea>
+  <button id="submit_comment">Legg inn</button>
 </div>
