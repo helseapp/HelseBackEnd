@@ -8,7 +8,6 @@
 
 <% @employees.each do |e| %>
 <tr>
-
   <td><%= link_to e.id, :action => "show", :id => e.id %></td>
   <td><%= e.firstname %></td>
   <td><%= e.lastname %></td>

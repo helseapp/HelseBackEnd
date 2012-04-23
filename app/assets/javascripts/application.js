@@ -15,3 +15,4 @@
 //= require_tree .
 
 mobile.js
+site.js
