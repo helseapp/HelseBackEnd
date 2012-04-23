@@ -35,7 +35,9 @@ emp3.save
 
 pat1 = Patient.new(:workplace => wor1, :firstname => "Gunnar", :lastname => "Jones",
                    :birthdate => "1910-02-13", :address => "Storgata 2", :postnumber => "0155",
-                   :postplace => "Oslo", :woman => false)
+                   :postplace => "Oslo", :woman => false, :mobilephone => "98765432",
+                   :email => "Gunnar@gmail.com", :average_visit_time => nil,
+                   :marital_status => "enkemann" )
 
 pat2 = Patient.new(:workplace => wor1, :firstname => "Britt", :lastname => "Watne",
                    :birthdate => "1917-12-13", :address => "Pilestredet 49", :postnumber => "0255",
@@ -87,8 +89,8 @@ vi4.save
 vi5.save
 
 # Tasks
-task1 = Task.new(:task_template_id => emp1.id, :visit_id => vi4.id, :completed => false)
-task2 = Task.new(:task_template_id => emp1.id, :visit_id => vi5.id, :completed => false)
+task1 = Task.new(:task_template_id => 1, :visit_id => vi4.id, :completed => false)
+task2 = Task.new(:task_template_id => 2, :visit_id => vi5.id, :completed => false)
 
 task1.save
 task2.save

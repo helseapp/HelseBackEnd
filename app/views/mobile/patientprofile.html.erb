@@ -5,23 +5,37 @@
     <li id="patient_address"><%= "#{@patient.address}" %><br/>
         <%= "#{@patient.postnumber} #{@patient.postplace}" %></li>
   </ul>
-  <div class="more">
-  </div>
-  <img src="<%= image_path('more.png') %>" id="more_img" /></a>
+  <img src="<%= image_path('more.png') %>" id="more_info" />
+  <br />
+  <div id="extended_info">
+  <ul>
+    <li>Mobilnr: <%= @patient.mobilephone %></li>
+    <li>Epost: <%= @patient.email %></li>
+    <li>Sivilstatus: <%= @patient.marital_status %></li>
+    <li>Gjennomsnittlig besøktid: <%= @patient.average_visit_time %> min.</li>
+  </ul>
+ </div>
 </div>
-<div id="extended_info">
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-  has been the industry's standard dummy text ever since the 1500s, when an unknown
-  printer took a galley of type and scrambled it to make a type specimen book. It has survived
-  not only five centuries.</p>
-</div>
+
+
+
 <div id="To_do">
-  <h2 id="to_do_title">To-Do liste</h2>
+  <h2 class="title">To-Do liste</h2>
   <ul>
   <% @visit[0].tasks.each do |t| %>
-      <li class="tasks" id="<%= t.id %>"><%= check_box_tag 'task_box', 'false' ; %><%= t.task_template.name %>
+      <li><%= check_box_tag 'task_box', 'false' ; %><span class="tasks" id="<%= t.id %>" >
+      <%= t.task_template.name %></span>
         <li class="task_description" id="task_description<%= t.id %>"></%=><%= t.task_template.description %></li>
       </li>
   <% end %>
   </ul>
+</div>
+
+<div id="patient_log">
+  <h2 class="title">Loggføring <img src="<%= image_path('more.png') %>" id="more_log" /></h2>
+  <p class="temporary_info">Her vil det være en multiple-choice liste med forskjellige ting som skal loggføres.</p>
+</div>
+
+<div id="comments">
+  <h2 class="title">Kommentarer <img src="<%= image_path('more.png') %>" id="more_comments" /></h2>
 </div>
