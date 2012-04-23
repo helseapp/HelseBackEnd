@@ -216,6 +216,10 @@ a, a:visited{
     cursor: pointer;
 }
 
+#comment_temp_info{
+    display: none;
+}
+
 .temporary_info{
     font-size: 0.7em;
     color: grey;

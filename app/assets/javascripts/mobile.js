@@ -25,6 +25,18 @@ $(document).ready(function(){
         }
     }),
     
+    // Show/hide comments
+    $('#more_comments').click(function(){
+        if($('#more_comments').attr('src') === "/assets/more.png"){
+            $('#more_comments').attr("src","/assets/less.png");
+            $('#comment_temp_info').slideDown("slow");
+        }
+        else{
+            $('#more_comments').attr('src', '/assets/more.png');
+            $('#comment_temp_info').stop().slideUp("slow");
+        }   
+    
+    }),
     // Scroll up and down
     $('#up').click(function(){
         scroll = $('.screen').scrollTop();
