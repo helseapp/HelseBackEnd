@@ -101,6 +101,8 @@ a, a:visited{
 #patients_to_visit {
       position: relative;
       padding-top: 5px;
+      min-height: 90px;
+      height: auto;
 }
 
 #patients_to_visit ul,li{
@@ -119,27 +121,18 @@ a, a:visited{
     font-family: sans-serif;
 }
 
-.more {
-    background-color: #CCCCCC;
-    position: absolute;
-    width: 100%;
-    height:  18px;
-    bottom: 0px;
-    left: 0px;
-    z-index: 1;
-}
 
-#more_img{
+#more_info{
     position: relative;
     width: 23px;
     float: right;
     margin-right: 5px;
-    margin-top: 13px;
+    bottom: 5px;
     z-index: 100;
     cursor: pointer;
 }
 
-#to_do_title{
+.title {
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 5px;
@@ -149,19 +142,23 @@ a, a:visited{
 
 #extended_info{
     display: none;
-    color: green;
+    color: #919191;
+    font-family: sans-serif;
+    font-size: 0.75em;
+    margin-left: 10px;
+    padding-bottom: 10px;
 }
 
 .tasks {
     font-family: sans-serif;
     font-size: 0.8em;
-    margin-left: 20px;
+    margin-left: 15px;
     cursor: pointer;
 }
 
 #task_box{
-    background: url('gunnar.png') no-repeat;
-    margin-right: 20px;
+    margin-left: 20px;
+    margin-right: 5px;
     margin-bottom: 15px;
 }
 
@@ -169,8 +166,45 @@ a, a:visited{
     display: none;
     font-family: sans-serif;
     font-size: 0.65em;
-    margin-left: 55px;
+    margin-left: 35px;
     padding-right: 15px;
     margin-bottom: 15px;
     color: #1B91E0;
+}
+
+#patient_log{
+    min-height: 60px;
+    height: auto;
+}
+
+#more_log{
+    position: relative;
+    width: 23px;
+    float: right;
+    margin-right: 5px;
+    bottom: 5px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+#comments{
+    min-heigt: 60px;
+    height: auto;
+}
+
+#more_comments{
+    position: relative;
+    width: 23px;
+    float: right;
+    margin-right: 5px;
+    bottom: 5px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.temporary_info{
+    font-size: 0.7em;
+    color: grey;
+    width: 90%;
+    margin: 0 auto;
 }
