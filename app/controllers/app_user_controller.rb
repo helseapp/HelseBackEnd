@@ -1,0 +1,2 @@
+class AppUserController < ApplicationController
+end

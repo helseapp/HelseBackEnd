@@ -2,7 +2,11 @@
 <html>
 <head>
   <title>HelseBackEnd</title>
+  <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
+  <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+
+  <%= stylesheet_link_tag    "backend", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -24,6 +28,7 @@
   <%= render :partial => 'context' rescue render "shared/context" %>
   
   <div id="main_content">
+    <%= render :partial => "shared/flash", :locals => {:flash => flash} %>
 
   <%= yield %>
   

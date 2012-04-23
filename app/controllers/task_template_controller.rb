@@ -17,7 +17,7 @@ class TaskTemplateController < ApplicationController
   def create
      @task_template = TaskTemplate.new(params[:task_template])
      if @task_template.save
-       flash[:success] = "Oppgavemalen #{@task_template.name} ble opprettet"
+       flash[:success] = "Oppgavemalen '#{@task_template.name}' ble opprettet"
        redirect_to :action => 'list'
      else 
        flash[:error] = "Oppgavemalen kunne ikke bli opprettet. Forsoek igjen"
@@ -34,6 +34,7 @@ class TaskTemplateController < ApplicationController
   def delete
     @task_template = TaskTemplate.find(params[:id])
     @task_template.destroy
+    flash[:success] = "Oppgavemalen ble slettet"
     redirect_to :action => "list"
   end
 

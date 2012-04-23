@@ -8,5 +8,6 @@ class Employee < ActiveRecord::Base
 
   has_many :visits
   has_one :appuser
+  has_many :tasks, :through => :visits
 
 end

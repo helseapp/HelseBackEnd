@@ -13,7 +13,7 @@ wor2.save
 emp1 = Employee.new(:workplace => wor1, :firstname => "Marthe", :lastname => "Lomholt",
                     :birthdate => "1988-07-12", :address => "Mandalls Gate 18", :postnumber => "0190",
                     :postplace => "Oslo", :email => "marthelomholt@gmail.com", :mobilephone => "95218828",
-                    :woman => true)
+                    :woman => true, :is_admin = false)
 
 emp2 = Employee.new(:workplace => wor1, :firstname => "Josef", :lastname => "Nyhus",
                     :birthdate => "1958-02-11", :address => "Vogts Gate 4", :postnumber => "0420",

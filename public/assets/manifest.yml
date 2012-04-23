@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 !binary "YnJpdHQucG5n": britt-648c99afbe722931fd46163ac8b73626.png
 !binary "ZGVzaXJlX3Nfc2hlbGwucG5n": desire_s_shell-0547e318c224ed90bf112bbcdd79e2b5.png
@@ -7,3 +8,14 @@
 !binary "cmFpbHMucG5n": rails-782b548cc1ba7f898cdad2d9eb8420d2.png
 !binary "YXBwbGljYXRpb24uanM=": application-8d3725fba044aef386b07facfe9fad4d.js
 !binary "YXBwbGljYXRpb24uY3Nz": application-b35cc528418b414e0ecddd6f89ae2a27.css
+=======
+--- 
+less.png: less-81e606a39d241f8fe9b5878fb8a4de9e.png
+britt.png: britt-648c99afbe722931fd46163ac8b73626.png
+desire_s_shell.png: desire_s_shell-0547e318c224ed90bf112bbcdd79e2b5.png
+gunnar.png: gunnar-0efb3d904dd529c872ea5134aef57be0.png
+rails.png: rails-782b548cc1ba7f898cdad2d9eb8420d2.png
+application.css: application-8fdf6a7d09cd32fde96d0b403ac3e6cd.css
+more.png: more-bd3d3557c8820388b4c0f55401277753.png
+application.js: application-0156832a4847e9561ee685d803ff3555.js
+>>>>>>> aa3dbf8db487d6ad4522ac68ad436110500520ec
