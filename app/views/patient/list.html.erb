@@ -5,7 +5,7 @@
     <th>Etternavn</th>
     <th>Adresse</th>
     <th>Poststed</th>
-    <th>E-post</th>
+
   </tr>
 
 
@@ -17,10 +17,9 @@
   <td><%= p.lastname %></td>
   <td><%= p.address %></td>
   <td><%= p.postplace %></td>
-  <td><%= p.email %></td>
 </tr>
 <% end %>
 
 </table>
 
-<%= link_to "Legg til ny pasient", :action => "new" %>
+<div id="page_button"><%= link_to "Legg til ny pasient", :action => "new" %></div>
