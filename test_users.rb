@@ -56,7 +56,7 @@ pat4.save
 
 
 
-# Tasks
+# TasksTemplates
 
 tt1 = TaskTemplate.new(:name => "Støvsuge", 
                   :description => "Støvsug alle flater i leiligheten, og sørg for at støvsugerposen ikke er full")
@@ -78,12 +78,20 @@ vi1 = Visit.new(:patient => pat1, :employee => emp1, :day=> 2.days.from_now, :st
 vi2 = Visit.new(:patient => pat2, :employee => emp1, :day=> 5.days.from_now, :start=> nil, :end=> nil)
 vi3 = Visit.new(:patient => pat2, :employee => emp2, :day=> 5.days.from_now, :start=> nil, :end=> nil)
 vi4 = Visit.new(:patient => pat1, :employee => emp1, :day=> Date.today, :start=>nil, :end=> nil)
+vi5 = Visit.new(:patient => pat2, :employee => emp1, :day=> Date.today, :start=>nil, :end=> nil)
 
 vi1.save
 vi2.save
 vi3.save
+vi4.save
+vi5.save
 
+# Tasks
+task1 = Task.new(:task_template_id => emp1.id, :visit_id => vi4.id, :completed => false)
+task2 = Task.new(:task_template_id => emp1.id, :visit_id => vi5.id, :completed => false)
 
+task1.save
+task2.save
 # Messages
 
 mes1 = Message.new(:date_sent => (Time.now - 3.days), :employee => emp1, :text => "Du er flink!",

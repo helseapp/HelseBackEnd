@@ -6,7 +6,7 @@ class MobileController < ApplicationController
   end
   
   def today
-    today = Date.today
+    todays_date = Date.today
     @number = params[:appuser_number]
     @pass = params[:appuser_hashed_password]
     @employee = Employee.first(:conditions =>["mobilephone=?",@number])
@@ -23,17 +23,16 @@ class MobileController < ApplicationController
         @visits = @employee.visits
         @todays_patients = []
         @visits.each do |v|
-          @todays_patients << v.patient if v.day == today
+          @todays_patients << v.patient if v.day == todays_date
         end
       end
     end
   end
   
   def patientprofile
+    todays_date = Date.today
     @patient = Patient.find(params[:id])
+    @visit = @patient.visits.find(:all, :conditions =>["day=?", todays_date])
   end
   
-  def extended_patientprofile
-    @patient = Patient.find(params[:id])
-  end
 end
