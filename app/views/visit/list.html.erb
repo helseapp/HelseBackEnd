@@ -5,6 +5,7 @@
     <th>Arbeider</th>
     <th>Påbegynt</th>
     <th>Avsluttet</th>
+    <th>Oppgaver</th>
   </tr>
   <% @visits.each do |v|%>
     <tr>
@@ -13,6 +14,7 @@
       <td><%= "#{v.employee.firstname} #{v.employee.lastname}" %></td>
       <td><%= v.start %></td>
       <td><%= v.end %></td>
+      <td><%= link_to "Besokets oppgaver", :action => "show", :id => v.id%>
     </tr>
   <% end %>
 </table>
