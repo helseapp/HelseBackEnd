@@ -1,0 +1,14 @@
+<%= form_for @visit, :url => "/visit/create" do |v| %>
+  <%= v.label :patient %>
+  <%= v.collection_select(:patient_id, Patient.all, :id, :lastname )%><br />
+  <%= v.label :employee %>
+  <%= v.collection_select(:employee_id, Employee.all, :id, :lastname)%><br />
+  <%= date_select("visit", "day", :start_year => Time.now.year, :end_year => Time.now.year + 3)%><br />
+  
+  <%= v.submit %>
+  <% end %>
+
+
+
+
+

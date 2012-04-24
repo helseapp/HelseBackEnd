@@ -1,8 +1,3 @@
-<% workplaces = []%>
-<% @workplace.each do |w|%>
-<%  workplaces << [w.name]  %>
-<% end %>
-
 <%= form_for @patient, :url => "/patient/create" do |p| %>
 
 
@@ -39,7 +34,7 @@
   
 
   <%= p.label :workplace %>
-  <%= collection_select(:patient, :workplace, Workplace.all, :id, :name)%></br>
+  <%= p.collection_select(:workplace_id, Workplace.all, :id, :name)%></br>
  
   
   <%= p.label :gender %>:

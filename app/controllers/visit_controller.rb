@@ -17,6 +17,21 @@ class VisitController < ApplicationController
     
   end
   
+  def create
+    
+    @visit = Visit.new(params[:visit])
+
+     if @visit.save
+       flash["success"] = "Besoket ble lagt til"
+       redirect_to :action => "list"
+     else 
+       flash["error"] = "Besoket kunne ikke lagres. Forsok igjen"
+       redirect_to :action => "new"
+     end
+    
+    
+  end
+  
   def index
     redirect_to :action => "list"
     

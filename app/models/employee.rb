@@ -1,6 +1,6 @@
 class Employee < ActiveRecord::Base
   
-  attr_accessible :address, :postplace, :mobilephone, :birthdate, :postnumber, :lastname, :woman, :firstname, :telephone, :email, :workplace, :is_admin, :password
+  attr_accessible :address, :postplace, :mobilephone, :birthdate, :postnumber, :lastname, :woman, :firstname, :telephone, :email, :workplace, :is_admin, :password, :workplace_id
   belongs_to :workplace
   
   validates_uniqueness_of :mobilephone, :email, :on => :save, :message => "Maa vaere unike"
