@@ -37,6 +37,7 @@ $(document).ready(function(){
         }   
     
     }),
+    
     // Scroll up and down
     $('#up').click(function(){
         scroll = $('.screen').scrollTop();

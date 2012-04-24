@@ -1,6 +1,6 @@
 <div class="login">
   <p id="error"><%= @error_message %></p>
-  <%= form_tag '/mobile/do_login', :method => :post, :controller => 'mobile' %>
+  <%= form_tag '/mobile/index', :method => :post, :controller => 'mobile' %>
     <p>Mobilnr</p>
     <%= text_field_tag 'employee_number'%>
     <p>Passord</p>

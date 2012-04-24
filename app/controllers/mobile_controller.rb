@@ -2,15 +2,14 @@ class MobileController < ApplicationController
   layout 'mobile'
   
   def index
-    if session[:employee]
-      redirect_to :action => "today"
-    end
-
+    do_login
+    
   end
   
   def today
     todays_date = Date.today
-    @visits = session[:employee].visits
+    employee = Employee.find(session[:employee])
+    @visits = employee.visits
     @todays_patients = []
     @visits.each do |v|
       @todays_patients << v.patient if v.day == todays_date
@@ -29,14 +28,20 @@ class MobileController < ApplicationController
 
   
   def do_login
+    unless session[:employee].nil?
+      redirect_to :action => "today"
+    end
+    
       @number = params[:employee_number]
       @pass = params[:employee_password]
-      session[:employee] = Employee.first(:conditions =>["mobilephone=? and password=?",@number, @pass])[:id]
-      if session[:employee]
-        redirect_to :action => "index"
+      employee = Employee.first(:conditions =>["mobilephone=? and password=?",@number, @pass])
+      
+      if employee.nil?
+        @error_message = "Ugyldig brukernavn/passord. Prov igjen."
       else
-        @error_message = "Ugyldig bruker, prov igjen"
-      end
+        session[:employee] = employee.id
+        redirect_to :action => "today"
+      end 
   end
 
 end
