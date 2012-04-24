@@ -21,10 +21,6 @@ class PatientController < ApplicationController
   
   def create 
 
-    wp = Workplace.find(params[:patient][:workplace])
-    puts wp
-    
-    params[:workplace] = wp
     @patient = Patient.new(params[:patient])
 
     if @patient.save
