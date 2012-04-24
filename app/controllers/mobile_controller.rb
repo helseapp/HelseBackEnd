@@ -10,6 +10,11 @@ class MobileController < ApplicationController
   
   def today
     todays_date = Date.today
+    @visits = session[:employee].visits
+    @todays_patients = []
+    @visits.each do |v|
+      @todays_patients << v.patient if v.day == todays_date
+    end
     
   end
   
@@ -18,6 +23,7 @@ class MobileController < ApplicationController
     todays_date = Date.today
     @patient = Patient.find(params[:id])
     @visit = @patient.visits.find(:all, :conditions =>["day=?", todays_date])
+    
     
   end
 
@@ -28,6 +34,8 @@ class MobileController < ApplicationController
       session[:employee] = Employee.first(:conditions =>["mobilephone=? and password=?",@number, @pass])
       if session[:employee]
         redirect_to :action => "index"
+      else
+        @error_message = "Ugyldig bruker, prov igjen"
       end
   end
 
