@@ -31,7 +31,7 @@ class MobileController < ApplicationController
   def do_login
       @number = params[:employee_number]
       @pass = params[:employee_password]
-      session[:employee] = Employee.first(:conditions =>["mobilephone=? and password=?",@number, @pass])
+      session[:employee] = Employee.first(:conditions =>["mobilephone=? and password=?",@number, @pass])[:id]
       if session[:employee]
         redirect_to :action => "index"
       else
