@@ -4,6 +4,7 @@
     <th>Fornavn</th>
     <th>Etternavn</th>
     <th>Telefonnummer</th>
+    <th>Systembruker</th>
   </tr>
 
 <% @employees.each do |e| %>
@@ -12,7 +13,9 @@
   <td><%= e.firstname %></td>
   <td><%= e.lastname %></td>
   <td><%= e.mobilephone %></td>
-</tr>
+  <% #Hvis bruker er systembruker skriv: vis systembrukerprofil, ellers gjør til systembruker %>
+  <td><%= link_to "Gjør til systembruker", :controller => "appuser", :action => "upgrade", :id => e.id %></td>
+</tr> 
 <% end %>
 
 </table>

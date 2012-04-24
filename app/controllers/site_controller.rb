@@ -18,6 +18,28 @@ class SiteController < ApplicationController
     
   end
   
+  ## USER LOGGEDIN AND STUFF METHODS
+  
+  def login
+    
+    
+  end
+  
+  
+  def login_ajax
+    
+    
+  end
+  
+  
+  def logout
+    
+  end
+  
+  
+  
+  
+  
   
   
 end

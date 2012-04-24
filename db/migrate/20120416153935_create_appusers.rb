@@ -6,6 +6,7 @@ class CreateAppusers < ActiveRecord::Migration
       t.boolean :is_admin, :default => false
       
       t.string :hashed_password
+      t.string :salt
 
       t.timestamps
     end

@@ -12,9 +12,27 @@ body{
   font-size:0.8em;
 }
 
+#login {
+    background-color: #FFF;
+    display:block;
+    position:fixed;
+    top:0px;
+    right:0px;
+    width:450px;
+    border-radius: 0 0 0 10px;
+    padding:5px;
+    border-left:1px solid #000;
+    border-bottom:1px solid #000;
+    box-shadow: 0.4em 0.4em 0.8em #444;
+    form{ 
+        padding:0;
+        margin:0;
+        }
+}
+
 div#wrapper{
     background-color: #FFF;
-  margin-top: 1.2em;
+  margin-top: 2em;
   margin-left: auto;
   margin-right: auto;
   width: 1000px;
@@ -102,45 +120,45 @@ header#main_header{
   clear:both;
  }
  
- 
-form {
-    font-size:1.2em;
-    margin: 0 auto 50px;
-    label {
-        position:relative;
-    	clear:left;
-    	left:3px;
-    	margin-right:3px;
+#main_content {
+    form {
+        font-size:1.2em;
+        margin: 0 auto 50px;
+        label {
+            position:relative;
+    	    clear:left;
+    	    left:3px;
+    	    margin-right:3px;
 
-    }
-    input {
-        font-size:0.8em;
+        }
+        input {
+            font-size:0.8em;
 
-    	width:250px;
-    	border-radius:2px;
+    	    width:250px;
+    	    border-radius:2px;
 
         
-    }
+        }
     
-    input[type="submit"]{
-    	margin-left: 250px;
-    	width:150px;
-    	font-size:0.7em;
-    }
+        input[type="submit"]{
+    	    margin-left: 250px;
+    	    width:150px;
+    	    font-size:0.7em;
+        }
     
-    input[type="radio"]{
-        width:30px;
-        float:none;
+        input[type="radio"]{
+            width:30px;
+            float:none;
 
-    }
-    select {
+        }
+        select {
 
-    }
+        }
 
     
+    }
+
 }
-
-
 
 .success, .error, .warning, .notice {
     text-align: center;
