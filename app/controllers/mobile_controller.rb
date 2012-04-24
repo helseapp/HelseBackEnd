@@ -36,5 +36,4 @@ class MobileController < ApplicationController
     @visit = @patient.visits.find(:all, :conditions =>["day=?", todays_date])
     
   end
-  
 end
