@@ -10,6 +10,7 @@ class MobileController < ApplicationController
   
   def today
     todays_date = Date.today
+    
   end
   
   
@@ -25,6 +26,9 @@ class MobileController < ApplicationController
       @number = params[:employee_number]
       @pass = params[:employee_password]
       session[:employee] = Employee.first(:conditions =>["mobilephone=? and password=?",@number, @pass])
+      if session[:employee]
+        redirect_to :action => "index"
+      end
   end
 
 end
