@@ -13,12 +13,6 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :mobilephone, :null => false
       t.string :telephone
       t.boolean :woman, :null => false
-      
-      t.string :hashed_password
-      t.string :salt
-      
-      
-      
 
       t.timestamps
     end
