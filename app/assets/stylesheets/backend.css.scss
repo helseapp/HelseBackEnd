@@ -38,9 +38,7 @@ header#main_header{
       margin-top:10px;
       
       li{
-        
-        
-        
+          display:inline;
         a {
           width:130px;
           display: inline-block;
@@ -150,3 +148,11 @@ form {
     width:90%; 
 }
 
+table{
+    td{
+        a{
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    }
+}
