@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120424173123) do
 
-  create_table "appusers", :force => true do |t|
-    t.integer  "employee_id"
-    t.string   "hashed_password"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
   create_table "comments", :force => true do |t|
     t.integer  "employees_id"
     t.integer  "patients_id"
@@ -30,20 +23,20 @@ ActiveRecord::Schema.define(:version => 20120424173123) do
 
   create_table "employees", :force => true do |t|
     t.integer  "workplace_id"
-    t.string   "firstname",       :null => false
-    t.string   "lastname",        :null => false
-    t.date     "birthdate",       :null => false
-    t.string   "address",         :null => false
-    t.string   "postnumber",      :null => false
+    t.string   "firstname",                       :null => false
+    t.string   "lastname",                        :null => false
+    t.date     "birthdate",                       :null => false
+    t.string   "address",                         :null => false
+    t.string   "postnumber",                      :null => false
     t.string   "postplace"
-    t.string   "email",           :null => false
-    t.string   "mobilephone",     :null => false
+    t.string   "email",                           :null => false
+    t.string   "mobilephone",                     :null => false
     t.string   "telephone"
-    t.boolean  "woman",           :null => false
-    t.string   "hashed_password"
-    t.string   "salt"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.boolean  "woman",                           :null => false
+    t.boolean  "is_admin",     :default => false
+    t.string   "password"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "messages", :force => true do |t|
@@ -54,11 +47,6 @@ ActiveRecord::Schema.define(:version => 20120424173123) do
     t.boolean  "read"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-  end
-
-  create_table "patient_notes", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "patients", :force => true do |t|

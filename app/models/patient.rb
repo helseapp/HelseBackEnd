@@ -3,7 +3,8 @@ class Patient < ActiveRecord::Base
   
   attr_accessible :postplace, :workplace, :address, :postnumber, :birthdate, :lastname, :woman, :firstname, :workplace
   
-  has_many :visits, :comments
+  has_many :visits
+  has_many :comments
   has_many :tasks, :through => :visits
   
   geocoded_by :address
