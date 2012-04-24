@@ -1,10 +1,10 @@
 <div class="login">
   <p id="error"><%= @error_message %></p>
-  <%= form_tag '/mobile/today', :method => :post, :controller => 'mobile' %>
+  <%= form_tag '/mobile/do_login', :method => :post, :controller => 'mobile' %>
     <p>Mobilnr</p>
-    <%= text_field_tag 'appuser_number'%>
+    <%= text_field_tag 'employee_number'%>
     <p>Passord</p>
-    <%= password_field_tag 'appuser_hashed_password' %>
+    <%= password_field_tag 'employee_password' %>
     <br/><br/> 
     <%= submit_tag 'Logg inn', :id => "log_in" %>
     </form>

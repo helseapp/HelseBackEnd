@@ -12,6 +12,7 @@ class EmployeeController < ApplicationController
   
   def new 
     @employee = Employee.new
+    @workplace = Workplace.all
     
   end 
   

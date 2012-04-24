@@ -1,3 +1,9 @@
+<% workplaces = []%>
+<% @workplace.each do |w|%>
+<%  workplaces << w.name  %>
+<% end%>
+
+
 <%= form_for @employee, :url => "/employee/create" do |f| %>
 
 
@@ -27,6 +33,9 @@
   
   <%= f.label :telephone %>:
   <%= f.text_field :telephone %><br />
+  
+  <%= f.label :workplace %>
+  <%= f.select(:workplace, workplaces)%><br />
   
   <%= f.label :gender %>:
   male:<%= radio_button("employee", "woman", "false") %>
