@@ -20,6 +20,7 @@ class MobileController < ApplicationController
         @error_message = "Ugyldig bruker, prov igjen"
         render :action => 'index'
       else
+        session[:appuser] = @appuser
         @visits = @employee.visits
         @todays_patients = []
         @visits.each do |v|
@@ -33,6 +34,7 @@ class MobileController < ApplicationController
     todays_date = Date.today
     @patient = Patient.find(params[:id])
     @visit = @patient.visits.find(:all, :conditions =>["day=?", todays_date])
+    
   end
   
 end
