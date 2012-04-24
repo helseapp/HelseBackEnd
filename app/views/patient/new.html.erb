@@ -1,0 +1,56 @@
+<% workplaces = []%>
+<% @workplace.each do |w|%>
+<%  workplaces << [w.name]  %>
+<% end %>
+
+<%= form_for @patient, :url => "/patient/create" do |p| %>
+
+
+  <%= p.label :firstname %>:
+  <%= p.text_field :firstname %><br />
+
+  <%= p.label :lastname %>:
+  <%= p.text_field :lastname %><br />
+  
+  <%= p.label :birthdate %>:
+  <%= date_select("patient", "birthdate", :start_year => 110.years.ago.year, :end_year => 40.years.ago.year, :order => [:day, :month, :year]) %> <br />
+  
+  <%= p.label :address %>:
+  <%= p.text_field :address %><br />
+  
+  <%= p.label :postnumber %>:
+  <%= p.text_field :postnumber %><br />
+  
+  <%= p.label :postplace %>:
+  <%= p.text_field :postplace %><br />
+  
+  <%= p.label :email %>:
+  <%= p.text_field :email %><br />
+  
+  <%= p.label :mobilephone %>:
+  <%= p.text_field :mobilephone %><br />
+  
+  
+  <%= p.label :telephone %>:
+  <%= p.text_field :telephone %><br />
+  
+  <%= p.label :marital_status %>
+  <%= p.text_field :marital_status %><br />
+  
+
+  <%= p.label :workplace %>
+  <%= collection_select(:patient, :workplace, Workplace.all, :id, :name)%></br>
+ 
+  
+  <%= p.label :gender %>:
+  male:<%= radio_button("patient", "woman", "false") %>
+  female:<%= radio_button("patient", "woman", "true")%> 
+  
+  <br />
+
+  <%= p.submit %>
+<% end %>
+
+
+
+

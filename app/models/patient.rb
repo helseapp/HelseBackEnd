@@ -1,7 +1,8 @@
 class Patient < ActiveRecord::Base
   belongs_to :workplace
   
-  attr_accessible :postplace, :workplace, :address, :postnumber, :birthdate, :lastname, :woman, :firstname, :workplace
+  attr_accessible :postplace, :workplace, :address, :postnumber, :birthdate, :lastname, :woman, :firstname, :workplace, 
+  :mobilephone, :telephone, :marital_status, :email, :workplace_id
   
   has_many :visits
   has_many :comments
@@ -9,5 +10,6 @@ class Patient < ActiveRecord::Base
   
   geocoded_by :address
   after_validation :geocode
+  
   
 end

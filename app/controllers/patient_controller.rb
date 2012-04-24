@@ -16,18 +16,23 @@ class PatientController < ApplicationController
   
   def new 
     @patient = Patient.new
+    @workplace = Workplace.all
   end
   
   def create 
-    @patient.save(params[:patient])
-    if @patient.save?
+
+    wp = Workplace.find(params[:patient][:workplace_id])
+    params[:patient][:workplace] = wp
+    @patient = Patient.new(params[:patient])
+
+    if @patient.save
       flash["success"] = "Pasienten ble lagret"
       redirect_to :action => "list"
     else 
       flash["error"] = "Pasienten kunne ikke lagres. Forsoek igjen"
       redirect_to :action => "new"
     end
-    
+  
   end
     
   
