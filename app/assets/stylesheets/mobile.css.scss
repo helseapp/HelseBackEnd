@@ -94,7 +94,7 @@ a, a:visited{
     border-bottom: 2px solid  #1B91E0;
 }
 
-#patients_to_visit{
+.patients_to_visit{
     border-bottom: 1px gray #777;
     padding-left: 5px;
     margin-top: 0px;
@@ -111,14 +111,14 @@ a, a:visited{
     padding-right: 13px;
 }
 
-#patients_to_visit {
+.patients_to_visit {
       position: relative;
       padding-top: 5px;
       min-height: 90px;
       height: auto;
 }
 
-#patients_to_visit ul,li{
+.patients_to_visit ul,li{
     list-style: none;
     
 }

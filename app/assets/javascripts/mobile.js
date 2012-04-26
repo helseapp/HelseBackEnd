@@ -1,6 +1,17 @@
 
 
 $(document).ready(function(){
+    // Show/hide menu
+    $('.patients_to_visit').click(function(){
+        id = $(this).attr('id')
+        
+        if($('#menu'+ id).css('display') === "none"){
+            $('#menu' + id).slideDown("slow");
+        }
+        else{
+            $('#menu' + id).slideUp("slow");
+        }
+    }
     // Show/hide more info about the patient
     $('#more_info').click(function(){
         if($('#more_info').attr('src') === "/assets/more.png"){

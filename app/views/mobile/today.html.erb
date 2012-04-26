@@ -1,15 +1,24 @@
 <h3 id="page_title">Dagens pasienter</h3>
 <% @todays_patients.each do |p| %>
-<a href="/mobile/patientprofile/<%= p.id %>">
-<div id="patients_to_visit">
+<div class="patients_to_visit" id="<%= p.id %>">
   <img  id="patient_img" src="<%= image_path('gunnar.png') %>">
   <ul>
     <li id="patient_name"><%= "#{p.firstname} #{p.lastname}" %></li>
     <li id="patient_address"><%= "#{p.address}" %><br/>
         <%= "#{p.postnumber} #{p.postplace}" %></li>
   </ul>
+  <div class="menu" id="menu<%= p.id %>" style="display: none">
+    <table>
+      <tr>
+        <td><img src="<%= image_path('telephone.jpg') %>" width="30" style="padding-right: 3em" /></td>
+        <td><img src="<%= image_path('Map.png') %>" width="30" style="padding-right: 3em"/></td>
+        <td><a href="/mobile/patientprofile/<%= p.id %>"><img src="<%= image_path('checklist.jpg') %>" width="30" /></a></td>
+      </tr>    
+    </table>
+  </div>
+  
 </div>
-</a>
+
 
 <% end %>
 
