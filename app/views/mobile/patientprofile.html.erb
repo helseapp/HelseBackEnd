@@ -36,7 +36,7 @@
 <div id="comments">
   <h2 class="title">Kommentarer <img src="<%= image_path('more.png') %>" id="more_comments" /></h2>
   <p class="temporary_info" id="comment_temp_info">Her kommer en liste med kommentarer andre ansatte skriver inn om denne pasienten.</p>
-  <%= form_for @comment, :url => {:action => "patientprofile"} do |c| %>
+  <%= form_for @comment, :remote => true, :url => {:action => "patientprofile"} do |c| %>
     <%= c.text_area :text, :size => "25x4" %>
     <%= c.submit "Legg inn" %><span id="character_counter">140</span>
   <% end %>
