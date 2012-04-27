@@ -4,14 +4,15 @@ $(document).ready(function(){
     // Show/hide menu
     $('.patients_to_visit').click(function(){
         id = $(this).attr('id')
-        
+
         if($('#menu'+ id).css('display') === "none"){
             $('#menu' + id).slideDown("slow");
         }
         else{
             $('#menu' + id).slideUp("slow");
         }
-    }
+    }),
+    
     // Show/hide more info about the patient
     $('#more_info').click(function(){
         if($('#more_info').attr('src') === "/assets/more.png"){
@@ -47,6 +48,24 @@ $(document).ready(function(){
             $('#comment_temp_info').stop().slideUp("slow");
         }   
     
+    }),
+
+    //Character counter -- not working yet
+    $('#comment_text').keyup(function(){
+        var limit = 140;
+        var warning = 10;
+        var enteredText = $(this).val().length; 
+        var remaining = limit - enteredText;
+        
+        if(remaining > warning){
+            $('#character_counter').html(remaining +'');
+        }
+        
+        if(remaining <= warning && remaining >= 0){
+            $('#character_counter').html(remaining +'').css('color','red');
+            
+        }
+        
     }),
     
     // Scroll up and down

@@ -22,6 +22,14 @@ class MobileController < ApplicationController
     todays_date = Date.today
     @patient = Patient.find(params[:id])
     @visit = @patient.visits.find(:all, :conditions =>["day=?", todays_date])
+    @comment = Comment.new(params[:comment])
+    @comment[:employees_id] = session[:employee]
+    @comment[:patients_id] = @patient.id
+    
+    if @comment.save
+      puts "Comment saved"
+      render :action => "patientprofile"
+    end
     
     
   end
@@ -42,6 +50,11 @@ class MobileController < ApplicationController
         session[:employee] = employee.id
         redirect_to :action => "today"
       end 
+  end
+  
+  def new_comment
+    @comment = Comment.new
+    
   end
 
 end
