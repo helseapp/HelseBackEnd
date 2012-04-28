@@ -1,7 +1,7 @@
 class CreateComments < ActiveRecord::Migration
   def change
     create_table :comments do |t|
-      t.references :employees, :patients
+      t.references :employee, :patient
       t.string :text
       
 
