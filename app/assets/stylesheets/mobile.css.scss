@@ -208,6 +208,10 @@ a, a:visited{
     height: auto;
 }
 
+.hidden_comments{
+    display: none;
+}
+
 #more_comments{
     position: relative;
     width: 23px;
@@ -218,8 +222,28 @@ a, a:visited{
     cursor: pointer;
 }
 
-#comment_temp_info{
-    display: none;
+.comment_text{
+    margin-left: 10px;
+    font-family: serif;
+    font-size: 0.8em;
+}
+
+.comment_author{
+    text-align: right;
+    font-family: sans-serif;
+    font-size: 0.7em;
+    margin-right: 10px;
+    color: #505050;
+}
+
+.comment_date{
+    text-align: right;
+    font-family: sans-serif;
+    font-size: 0.65em;
+    margin-right: 10px;
+    color: #0059FF;
+    padding-bottom: 2px;
+    border-bottom: 1px dotted #909090;
 }
 
 .temporary_info{

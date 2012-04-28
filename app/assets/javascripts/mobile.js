@@ -41,16 +41,16 @@ $(document).ready(function(){
     $('#more_comments').click(function(){
         if($('#more_comments').attr('src') === "/assets/more.png"){
             $('#more_comments').attr("src","/assets/less.png");
-            $('#comment_temp_info').slideDown("slow");
+            $('.hidden_comments').stop().slideDown("slow");
         }
         else{
             $('#more_comments').attr('src', '/assets/more.png');
-            $('#comment_temp_info').stop().slideUp("slow");
+            $('.hidden_comments').stop().slideUp("slow");
         }   
     
     }),
 
-    //Character counter -- not working yet
+    //Character counter
     $('#comment_text').keyup(function(){
         var limit = 140;
         var warning = 10;
@@ -71,12 +71,12 @@ $(document).ready(function(){
     // Scroll up and down
     $('#up').click(function(){
         scroll = $('.screen').scrollTop();
-        $('.screen').animate({'scrollTop': scroll-100}, 1000);
+        $('.screen').stop().animate({'scrollTop': scroll-150}, 500);
     }),
     
     $('#down').click(function(){
         scroll = $('.screen').scrollTop();
-        $('.screen').animate({'scrollTop': scroll+100}, 1000);
+        $('.screen').stop().animate({'scrollTop': scroll+150}, 500);
     
     })
 
