@@ -1,2 +1,90 @@
-<%= javascript_include_tag "site.js" %>
-<div id="map_canvas" style="width:100%; height:100%"></div>
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "site" %>
+  <script>
+  
+    lat = 59.91228;
+    lng = 10.74998;
+  
+    function initialize() {
+      var myOptions = {
+        zoom: 13,
+        center: new google.maps.LatLng(lat, lng),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+      
+      <% @patients.each do |p| %> 
+        <% if p.latitude and p.longitude %>
+       
+          var <%= "patientpos_#{p.id}" %> = new google.maps.LatLng(<%= "#{p.latitude}, #{p.longitude}" %>);
+          var <%= "patientmarker_#{p.id}" %> = new google.maps.Marker({
+              position: <%= "patientpos_#{p.id}" %>,
+              map: map,
+              title:<%= " '#{p.firstname} #{p.lastname} '" %>
+          });
+        <% end %>
+      <% end %>
+      
+      
+      <% @workplaces.each do |w| %> 
+        <% if w.latitude and w.longitude %>
+       
+          var <%= "workplacepos_#{w.id}" %> = new google.maps.LatLng(<%= "#{w.latitude}, #{w.longitude}" %>);
+          var <%= "workplacemarker_#{w.id}" %> = new google.maps.Marker({
+              position: <%= "workplacepos_#{w.id}" %>,
+              map: map,
+              title:<%= " '#{w.name} '" %>
+          });
+        <% end %>
+      <% end %>
+      
+      
+      
+    }
+
+    function loadScript() { 
+      navigator.geolocation.getCurrentPosition(location_success,location_error); 
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyBm_j-O9x3F8_-lZv6d7FKZIuOO6m9pw9k&sensor=true&callback=initialize";
+      document.body.appendChild(script);
+    }
+
+    
+      window.onload = loadScript;
+
+
+      function location_error(error)  
+      {  
+          switch(error.code)  
+          {  
+              case error.PERMISSION_DENIED: alert("user did not share geolocation data");  
+              break;  
+
+              case error.POSITION_UNAVAILABLE: alert("could not detect current position");  
+              break;  
+
+              case error.TIMEOUT: alert("retrieving position timed out");  
+              break;  
+
+              default: alert("unknown error");  
+              break;  
+          }  
+      }  
+      
+      function location_success(position){
+        lat = position.coords.latitude;
+        lng = position.coords.longitude
+      }
+
+  
+  
+  
+  </script>
+  
+  
+  
+<% end %>
+
+
+<div id="map_canvas" style="width: 700px; height: 500px"></div>
