@@ -1,0 +1,11 @@
+<%= form_for(:employee, :url => "/site/do_login", :method => :post)  do |f| %>
+  <%= f.label :mobilephone, 'Telefonnummer'%>
+  <%= f.text_field :mobilephone%><br />
+  <%= f.label :password, "Passord"%>
+  <%= f.password_field :password %><br />
+  <%= f.submit "Logg inn!" %>
+  <% end %>
+
+
+
+

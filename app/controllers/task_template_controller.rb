@@ -1,5 +1,6 @@
 class TaskTemplateController < ApplicationController
   layout "backend"
+  before_filter :admin_required, :except => :about
   
   def list 
     @task_templates = TaskTemplate.all

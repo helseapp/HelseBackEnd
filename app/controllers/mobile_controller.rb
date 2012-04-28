@@ -25,9 +25,7 @@ class MobileController < ApplicationController
     @latest_comments = Comment.last(3).reverse
     @comment = Comment.new(params[:comment])
     @comment[:patients_id] = @patient.id
-   
-    
-    
+
   end
 
   
@@ -47,13 +45,11 @@ class MobileController < ApplicationController
   end
   
   def save_comment
-      
       @comment = Comment.new(params[:comment])
       @comment[:employees_id] = session[:employee] 
       if @comment.save
         redirect_to :action => "patientprofile", :id => @comment.patients_id
       end
-    
   end
   
   

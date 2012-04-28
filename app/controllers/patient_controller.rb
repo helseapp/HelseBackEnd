@@ -1,5 +1,6 @@
 class PatientController < ApplicationController
   layout "backend"
+  before_filter :admin_required, :except => :about
   
   def list
     @patients = Patient.all
