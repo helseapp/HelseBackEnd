@@ -1,45 +1,73 @@
+<table>
 <%= form_for @employee, :url => "/employee/create" do |f| %>
 
+<tr>
+  <td><%= f.label :firstname %>:</td>
+  <td><%= f.text_field :firstname, :size => 20 %></td>
+</tr>
+<tr>
+  <td><%= f.label :lastname %>:</td>
+  <td><%= f.text_field :lastname, :size => 20  %></td>
+</tr>
 
-  <%= f.label :firstname %>:
-  <%= f.text_field :firstname %><br />
+<tr>
+  <td><%= f.label :password %></td>
+  <td><%= f.password_field :password, :size => 20  %></td>
+</tr>
 
-  <%= f.label :lastname %>:
-  <%= f.text_field :lastname %><br />
-  
-  <%= f.label :password %>
-  <%= f.password_field :password %> <br />
-  
-  <%= f.label :birthdate %>:
-  <%= date_select("employee", "birthdate", :start_year => 65.years.ago.year, :end_year => 10.years.ago.year, :order => [:day, :month, :year]) %> <br />
-  
-  <%= f.label :address %>:
-  <%= f.text_field :address %><br />
-  
-  <%= f.label :postnumber %>:
-  <%= f.text_field :postnumber %><br />
-  
-  <%= f.label :postplace %>:
-  <%= f.text_field :postplace %><br />
-  
-  <%= f.label :email %>:
-  <%= f.text_field :email %><br />
-  
-  <%= f.label :mobilephone %>:
-  <%= f.text_field :mobilephone %><br />
-  
-  <%= f.label :telephone %>:
-  <%= f.text_field :telephone %><br />
-  
-  <%= f.label :workplace %>
-  <%= f.collection_select(:workplace_id, Workplace.all, :id, :name)%><br />
-  
-  <%= f.label :gender %>:
-  male:<%= radio_button("employee", "woman", "false") %>
-  female:<%= radio_button("employee", "woman", "true")%> 
-  
-  <br />
+<tr>
+  <td><%= f.label :birthdate %>:</td>
+  <td><%= date_select("employee", "birthdate", :start_year => 65.years.ago.year, :end_year => 10.years.ago.year, :order => [:day, :month, :year]) %></td>
+</tr>
 
-  <%= f.submit %>
+<tr>
+  <td><%= f.label :address %>:</td>
+  <td><%= f.text_field :address, :size => 20  %></td>
+</tr>
+
+
+<tr>
+  <td><%= f.label :postnumber %>:</td>
+  <td><%= f.text_field :postnumber, :size => 20  %></td>
+</tr>
+
+<tr>
+  <td><%= f.label :postplace %>:</td>
+  <td><%= f.text_field :postplace, :size => 20  %></td>
+</tr>
+
+<tr>
+  <td><%= f.label :email %>:</td>
+  <td><%= f.text_field :email , :size => 20 %></td>
+</tr>
+
+<tr>
+  <td><%= f.label :mobilephone %>:</td>
+  <td><%= f.text_field :mobilephone, :size => 20  %></td>
+</tr>
+  
+<tr>
+  <td><%= f.label :telephone %>:</td>
+  <td><%= f.text_field :telephone, :size => 20  %></td>
+</tr>
+  
+<tr>
+  <td><%= f.label :workplace %></td>
+  <td><%= f.collection_select(:workplace_id, Workplace.all, :id, :name)%></td>
+</tr>
+
+<tr>
+  <td><%= f.label :gender %>:</td>
+  <td><%= radio_button("employee", "woman", "false") %>  male</td>
+</tr>
+<tr>
+  <td></td><td><%= radio_button("employee", "woman", "true")%>  female</td>
+</tr>
+  
+<tr>
+  <td><%= f.submit %></td>
+</tr>
+  
 <% end %>
+</table>
 
