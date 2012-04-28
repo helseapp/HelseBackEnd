@@ -42,11 +42,12 @@
       <p class="comment_author">Skrevet av: <%= "#{Employee.find(session[:employee])[:firstname]} #{Employee.find(session[:employee])[:lastname]}" %></p>
       <p class="comment_date">Dato: <%= c.created_at.strftime("%d-%m-%Y %H:%M") %></p>
     <% end %>
+   </span>
     
     <%= form_for @comment, :url => {:action => "save_comment"} do |c| %>
       <%= c.text_area :text, :size => "25x4" %>
       <%=  c.hidden_field(:patients_id, :value => @patient.id) %> 
       <%= c.submit "Legg inn" %><span id="character_counter">140</span>
     <% end %>
-  </span>
+  
 </div>
