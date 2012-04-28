@@ -4,14 +4,17 @@
   
     lat = 59.91228;
     lng = 10.74998;
+    var map;
   
     function initialize() {
+      
+      
       var myOptions = {
         zoom: 13,
         center: new google.maps.LatLng(lat, lng),
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
-      var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+      map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
       
       <% @patients.each do |p| %> 
         <% if p.latitude and p.longitude %>
@@ -38,7 +41,7 @@
         <% end %>
       <% end %>
       
-      
+      updatelocation();
       
     }
 
@@ -76,10 +79,19 @@
         lat = position.coords.latitude;
         lng = position.coords.longitude
       }
+      
+      
+      
+      function updatelocation(){
+        navigator.geolocation.getCurrentPosition(location_success,location_error);
+        var mylatlng = new google.maps.LatLng(lat, lng);
+        map.setCenter(mylatlng); 
+        
+        
+        
+      }
 
-  
-  
-  
+      
   </script>
   
   
