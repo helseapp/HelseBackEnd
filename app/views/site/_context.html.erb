@@ -1,5 +1,6 @@
 <div id="context_menu">
   <ul>
+    <li><%= link_to "Mobil-app", :controller => "mobile", :action => "index" %></li>
     <li><%= link_to "Kart over pasienter og sentere", :action => "map" %></li>
     <li><%= link_to "Dagens besok", :action => "today" %></li>
     <li><%= link_to "Besokslogg", :action => "log" %></li>
@@ -7,5 +8,7 @@
     <% if session[:employee]%>
       <li><%= link_to "Logg ut", :action => "logout" %></li>
     <% end %>
+
   </ul>
+  
 </div><!-- end context_menu -->

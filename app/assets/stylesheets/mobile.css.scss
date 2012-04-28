@@ -86,12 +86,32 @@ a, a:visited{
    
 }
 
+#page_description{
+    position: fixed;
+    margin-top:55%;
+    margin-left: 60%;
+    font-family: Times;
+    color: #5C5C5C;
+    font-style: italic;
+    font-weight: 500;
+    width: 20em;
+}
+
 #page_title{
     text-align: center;
     font-family: sans-serif;
     font-weight: 100;
     color: #909090;
     border-bottom: 2px solid  #1B91E0;
+}
+
+#messages{
+    background-color: #8E8E8E;
+}
+
+#message_icon{
+    float: right;
+    width: 3em;
 }
 
 .patients_to_visit{
