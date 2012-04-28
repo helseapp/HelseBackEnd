@@ -7,6 +7,9 @@
   <%= f.label :lastname %>:
   <%= f.text_field :lastname %><br />
   
+  <%= f.label :password %>
+  <%= f.password_field :password %> <br />
+  
   <%= f.label :birthdate %>:
   <%= date_select("employee", "birthdate", :start_year => 65.years.ago.year, :end_year => 10.years.ago.year, :order => [:day, :month, :year]) %> <br />
   
