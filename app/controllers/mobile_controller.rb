@@ -55,5 +55,12 @@ class MobileController < ApplicationController
       end
     
   end
+  
+  
+  def map
+    @patients = Patient.all
+    @pat = Patient.find(params[:id])
+    
+  end
 
 end
