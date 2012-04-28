@@ -1,0 +1,142 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "site" %>
+  <script>
+  
+    lat = 59.91228;
+    lng = 10.74998;
+    var map;
+    var directionsService;
+  
+    function initialize() {
+      
+      
+      var myOptions = {
+        zoom: 13,
+        center: new google.maps.LatLng(lat, lng),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+      
+      <% pat = @pat %>
+      
+      <% if pat.latitude and pat.longitude %>
+       
+          var patpos = new google.maps.LatLng(<%= "#{pat.latitude}, #{pat.longitude}" %>);
+          var patmark = new google.maps.Marker({
+              position: patpos,
+              map: map,
+              title:<%= " '#{pat.firstname} #{pat.lastname} '" %>
+          });
+        <% end %>
+        updatelocation();
+        var mypos = new google.maps.LatLng(lat, lng);
+        var mymark = new google.maps.Marker({
+          position: mypos,
+          map: map,
+          title: "Din posisjon"
+        });
+                
+        
+        var diropt = {
+            origin: mypos,
+            destination: patpos,
+            travelMode: google.maps.TravelMode.DRIVING,
+            unitSystem: google.maps.UnitSystem.METRIC,
+            optimizeWaypoints: true,
+            region: "no"
+        }
+        
+       directionsService = new google.maps.DirectionsService();
+        
+        directionsService.route(diropt, function(result, status) {
+          if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(result);
+            dist = result.routes[0].legs[0].distance.value / 1000;
+            time = result.routes[0].legs[0].duration.value / 60;
+            $('#distance').html(dist.toFixed(2));
+            $('#arrival').html(time.toFixed(2));
+
+            
+            
+          }
+        });
+           
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        directionsDisplay.setMap(map);
+        
+        
+       
+
+
+
+
+      
+      
+      
+    }
+
+    function loadScript() { 
+      navigator.geolocation.getCurrentPosition(location_success,location_error); 
+      setTimeout("loadMap()", 500);
+
+    }
+    
+    function loadMap(){
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyBm_j-O9x3F8_-lZv6d7FKZIuOO6m9pw9k&sensor=true&callback=initialize";
+      document.body.appendChild(script);
+      
+    }
+
+    
+      
+
+
+      function location_error(error)  
+      {  
+          switch(error.code)  
+          {  
+              case error.PERMISSION_DENIED: alert("user did not share geolocation data");  
+              break;  
+
+              case error.POSITION_UNAVAILABLE: alert("could not detect current position");  
+              break;  
+
+              case error.TIMEOUT: alert("retrieving position timed out");  
+              break;  
+
+              default: alert("unknown error");  
+              break;  
+          }  
+      }  
+      
+      function location_success(position){
+        lat = position.coords.latitude;
+        lng = position.coords.longitude
+      }
+      
+      
+      
+      function updatelocation(){
+        navigator.geolocation.getCurrentPosition(location_success,location_error);
+        var mylatlng = new google.maps.LatLng(lat, lng);
+        map.setCenter(mylatlng); 
+      }
+      
+      
+      
+      window.onload = loadScript;
+
+      
+  </script>  
+<% end %>
+
+
+<div id="map_canvas" style="width: 228px; height: 300px"></div>
+<div id="mapinfo">
+  <ul>
+    <li>Avstand: <span id="distance"> </span> km</li>
+    <li>Beregnet tid: <span id="arrival"> </span> min</li>
+  </ul>
+</div>
