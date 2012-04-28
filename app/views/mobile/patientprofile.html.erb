@@ -30,17 +30,23 @@
 
 <div id="patient_log">
   <h2 class="title">Loggføring <img src="<%= image_path('more.png') %>" id="more_log" /></h2>
-  <p class="temporary_info">Her vil det være en multiple-choice liste med forskjellige ting som skal loggføres.</p>
+  <p class="temporary_info">Her vil det være en multiple-choice liste for loggføring av diverse ting.</p>
+  
 </div>
 
 <div id="comments">
   <h2 class="title">Kommentarer <img src="<%= image_path('more.png') %>" id="more_comments" /></h2>
-  <p class="temporary_info" id="comment_temp_info">Her kommer en liste med kommentarer andre ansatte skriver inn om denne pasienten.</p>
-  <%= form_for @comment, :remote => true, :url => {:action => "patientprofile"} do |c| %>
-    <%= c.text_area :text, :size => "25x4" %>
-    <%= c.submit "Legg inn" %><span id="character_counter">140</span>
-  <% end %>
-  
+  <span class="hidden_comments">
+    <% @latest_comments.each do |c| %>
+      <p class="comment_text"><%= c.text %></p>
+      <p class="comment_author">Skrevet av: <%= "#{Employee.find(session[:employee])[:firstname]} #{Employee.find(session[:employee])[:lastname]}" %></p>
+      <p class="comment_date">Dato: <%= c.created_at.strftime("%d-%m-%Y %H:%M") %></p>
+    <% end %>
     
-  
+    <%= form_for @comment, :url => {:action => "save_comment"} do |c| %>
+      <%= c.text_area :text, :size => "25x4" %>
+      <%=  c.hidden_field(:patients_id, :value => @patient.id) %> 
+      <%= c.submit "Legg inn" %><span id="character_counter">140</span>
+    <% end %>
+  </span>
 </div>

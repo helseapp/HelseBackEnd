@@ -1,9 +1,8 @@
 class MobileController < ApplicationController
   layout 'mobile'
-  
+
   def index
-    do_login
-    
+     
   end
   
   def today
@@ -22,23 +21,17 @@ class MobileController < ApplicationController
     todays_date = Date.today
     @patient = Patient.find(params[:id])
     @visit = @patient.visits.find(:all, :conditions =>["day=?", todays_date])
-    @comment = Comment.new(params[:comment])
-    @comment[:employees_id] = session[:employee]
-    @comment[:patients_id] = @patient.id
     
-    if @comment.save
-      puts "Comment saved"
-      render :action => "patientprofile"
-    end
+    @latest_comments = Comment.last(3).reverse
+    @comment = Comment.new(params[:comment])
+    @comment[:patients_id] = @patient.id
+   
     
     
   end
 
   
   def do_login
-    unless session[:employee].nil?
-      redirect_to :action => "today"
-    end
     
       @number = params[:employee_number]
       @pass = params[:employee_password]
@@ -46,14 +39,20 @@ class MobileController < ApplicationController
       
       if employee.nil?
         @error_message = "Ugyldig brukernavn/passord. Prov igjen."
+        redirect_to :action => "index"
       else
         session[:employee] = employee.id
         redirect_to :action => "today"
       end 
   end
   
-  def new_comment
-    @comment = Comment.new
+  def save_comment
+      
+      @comment = Comment.new(params[:comment])
+      @comment[:employees_id] = session[:employee] 
+      if @comment.save
+        redirect_to :action => "patientprofile", :id => @comment.patients_id
+      end
     
   end
 
