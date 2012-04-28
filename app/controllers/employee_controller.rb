@@ -1,5 +1,6 @@
 class EmployeeController < ApplicationController
   layout "backend"
+  before_filter :admin_required, :except => :about
   
   def list 
     @employees = Employee.all

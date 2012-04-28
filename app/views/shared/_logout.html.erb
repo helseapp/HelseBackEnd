@@ -1,0 +1,6 @@
+<% if session[:employee]%>
+ <div id="logout">
+  <%= link_to "logg ut", :controller => "site", :action => "logout" %>
+ </div>
+<% end %>
+  

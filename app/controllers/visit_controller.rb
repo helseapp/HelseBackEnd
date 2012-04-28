@@ -1,5 +1,6 @@
 class VisitController < ApplicationController
   layout "backend"
+  before_filter :login_required, :except => :about
   
   
   def list

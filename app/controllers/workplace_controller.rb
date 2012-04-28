@@ -1,5 +1,6 @@
 class WorkplaceController < ApplicationController
   layout "backend"
+  before_filter :admin_required, :except => :about
   
   def list
     @workplaces = Workplace.all
