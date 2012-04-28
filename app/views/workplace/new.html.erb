@@ -1,20 +1,33 @@
+<table>
 <%= form_for @workplace, :url => "/workplace/create" do |w| %>
+<tr>
+  <td><%= w.label :name %>:</td>
+  <td><%= w.text_field :name %></td>
+</tr>
 
+<tr>
+  <td><%= w.label :address %>:</td>
+  <td><%= w.text_field :address %></td>
+</tr>
 
-  <%= w.label :name %>:
-  <%= w.text_field :name %><br />
+<tr>
+  <td><%= w.label :postnumber %>:</td>
+  <td><%= w.text_field :postnumber %></td>
+</tr>
 
-  <%= w.label :address %>:
-  <%= w.text_field :address %><br />
-  
-  <%= w.label :postnumber %>:
-  <%= w.text_field :postnumber %><br />
-  
-  <%= w.label :postplace %>:
-  <%= w.text_field :postplace %><br />
-  
-  <%= w.label :telephone %>:
-  <%= w.text_field :telephone %><br />
-  
-  <%= w.submit %>
+<tr>
+  <td><%= w.label :postplace %>:</td>
+  <td><%= w.text_field :postplace %></td>
+</tr>
+
+<tr>
+  <td><%= w.label :telephone %>:</td>
+  <td><%= w.text_field :telephone %></td>
+</tr>
+ 
+<tr>
+  <td><%= w.submit %></td>
+</tr> 
+
 <% end %>
+</table>
