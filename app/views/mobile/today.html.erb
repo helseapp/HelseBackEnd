@@ -1,5 +1,5 @@
 <h3 id="page_title">Dagens pasienter</h3>
-<span id ="messages">0 uleste meldinger</span><img id="message_icon" src="<%= image_path('message.jpg') %>" />
+<span id ="messages">0 uleste meldinger<img id="message_icon" src="<%= image_path('message.jpg') %>" /></span>
 <% @todays_patients.each do |p| %>
 <div class="patients_to_visit" id="<%= p.id %>">
   <img  id="patient_img" src="<%= image_path('gunnar.png') %>">

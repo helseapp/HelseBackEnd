@@ -1,11 +1,21 @@
+<table>
+  
 <%= form_for(:employee, :url => "/site/do_login", :method => :post)  do |f| %>
-  <%= f.label :mobilephone, 'Telefonnummer'%>
-  <%= f.text_field :mobilephone%><br />
-  <%= f.label :password, "Passord"%>
-  <%= f.password_field :password %><br />
-  <%= f.submit "Logg inn!" %>
+  <tr>
+    <td><%= f.label :mobilephone, 'Telefonnummer'%></td>
+    <td><%= f.text_field :mobilephone%></td>
+  </tr>
+  <tr>
+    <td><%= f.label :password, "Passord"%></td>
+    <td><%= f.password_field :password %><br /></td>
+  </tr>
+  <tr>
+    <td><%= f.submit "Logg inn!" %></td>
+  </tr>
+  
   <% end %>
 
+</table>
 
 
 

@@ -22,9 +22,9 @@ class MobileController < ApplicationController
     @patient = Patient.find(params[:id])
     @visit = @patient.visits.find(:all, :conditions =>["day=?", todays_date])
     
-    @latest_comments = Comment.last(3).reverse
+    @latest_comments = @patient.comments.last(3)
     @comment = Comment.new(params[:comment])
-    @comment[:patients_id] = @patient.id
+    @comment[:patient_id] = params[:id]
 
   end
 
@@ -46,9 +46,10 @@ class MobileController < ApplicationController
   
   def save_comment
       @comment = Comment.new(params[:comment])
-      @comment[:employees_id] = session[:employee] 
+      @comment[:employee_id] = session[:employee]
+      
       if @comment.save
-        redirect_to :action => "patientprofile", :id => @comment.patients_id
+        redirect_to :action => "patientprofile", :id => @comment.patient_id
       end
   end
   

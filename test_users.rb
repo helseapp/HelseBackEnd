@@ -13,7 +13,7 @@ wor2.save
 emp1 = Employee.new(:workplace => wor1, :firstname => "Marthe", :lastname => "Lomholt",
                     :birthdate => "1988-07-12", :address => "Mandalls Gate 18", :postnumber => "0190",
                     :postplace => "Oslo", :email => "marthelomholt@gmail.com", :mobilephone => "95218828",
-                    :woman => true, :is_admin = false)
+                    :woman => true, :is_admin => false)
 
 emp2 = Employee.new(:workplace => wor1, :firstname => "Josef", :lastname => "Nyhus",
                     :birthdate => "1958-02-11", :address => "Vogts Gate 4", :postnumber => "0420",
@@ -41,7 +41,7 @@ pat1 = Patient.new(:workplace => wor1, :firstname => "Gunnar", :lastname => "Jon
 
 pat2 = Patient.new(:workplace => wor1, :firstname => "Britt", :lastname => "Watne",
                    :birthdate => "1917-12-13", :address => "Pilestredet 49", :postnumber => "0255",
-                   :postplace => "Oslo", :woman => true)
+                   :postplace => "Oslo", :woman => true, :mobilephone => "12345678", :email => "Britt@watne.com", :average_visit_time => 40, :marital_status => "Enke")
 
 pat3 = Patient.new(:workplace => wor2, :firstname => "Sofie", :lastname => "Eller",
                    :birthdate => "1941-06-13", :address => "Holbergs Plass 13", :postnumber => "0355",
